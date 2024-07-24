@@ -1,5 +1,4 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/head.php";
 include $_SERVER['DOCUMENT_ROOT']."/header.php";
 include $_SERVER['DOCUMENT_ROOT']."/db.php";
 ?>
@@ -13,7 +12,7 @@ include $_SERVER['DOCUMENT_ROOT']."/db.php";
   $search_con = $_GET['search'];
 ?>
   <h1><?php echo $catagory; ?>form '<?php echo $search_con; ?>'Search results</h1>
-  <h4 ><a style="background-color: gray" href="/">Back to home</a></h4>
+  <h4 style="margin-top:30px;"><a href="/index.php">Back to home</a></h4>
     <table class="list-table">
       <thead>
           <tr>
@@ -58,7 +57,7 @@ include $_SERVER['DOCUMENT_ROOT']."/db.php";
           }
           ?>
         <!--- 추가부분 18.08.01 END -->
-        <a href='/page/board/read.php?idx=<?php echo $board["idx"]; ?>'><span style="background:grey;"><?php echo $title; }?></span><span class="re_ct">[<?php echo $rep_count;?>]<?php echo $img; ?> </span></a></td>
+        <a href='/page/board/read.php?idx=<?php echo $board["idx"]; ?>'><span style="background:yellow;"><?php echo $title; }?></span><span class="re_ct">[<?php echo $rep_count;?>]<?php echo $img; ?> </span></a></td>
           <td width="120"><?php echo $board['name']?></td>
           <td width="100"><?php echo $board['date']?></td>
           <td width="100"><?php echo $board['hit']; ?></td>

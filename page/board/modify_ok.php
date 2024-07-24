@@ -1,7 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT']."/db.php";
 
-
 $bno = $_GET['idx'];
 $username = $_POST['name'];
 $userpw = password_hash($_POST['pw'], PASSWORD_DEFAULT);

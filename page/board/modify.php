@@ -1,17 +1,15 @@
 <!--- 게시글 수정 -->
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/head.php";
 include $_SERVER['DOCUMENT_ROOT']."/header.php";
 include $_SERVER['DOCUMENT_ROOT']."/db.php";
 ?>
-
 <?php
 	$bno = $_GET['idx'];
 	$sql = query("select * from board where idx='$bno';");
 	$board = $sql->fetch_array();
  ?>
     <div id="board_write">
-        <h1 id="back-to-freeboard"><a href="/">Back to Freeboard</a></h1>
+        <h1><a href="/">Freeboard</a></h1>
         <h4>Edit your post.</h4>
             <div id="write_area">
                 <form action="modify_ok.php?idx=<?php echo $bno; ?>" method="post">

@@ -1,6 +1,3 @@
-<?php
-include $_SERVER['DOCUMENT_ROOT']."/head.php";
-?>
 <div class="right-menu">
         <h2>Login</h2>
         <?php
