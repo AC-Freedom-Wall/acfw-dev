@@ -5,8 +5,8 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 ?>
 <div class="container">
     <div class="content">
-        <h2>Algonquin College Freedom-Wall</h2>
-        <p>This is where the main content of the page goes.</p>
+        <h2>Main Content Area</h2>
+        <p>This is where the main content of the page goes!!!.</p>
 
         <?php
 				if(!isset($_SESSION['userid'])){
@@ -14,6 +14,8 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 				// }else if( $lo_point['point']=='0' || $lo_point['point']>'0'){
 				}else{
 			?>
+			
+
 			        <div id="search_box">
     <form action="/page/board/search_result.php" method="get">
       <select name="catgo">
@@ -104,13 +106,7 @@ if ($result->num_rows > 0) {
 				}
 			?> 
 		</div>
-	<!-- Modify and Delete -->
-	<?php
-				if(!isset($_SESSION['userid'])){
-				//	echo "<div id='not_use'>You can write after logging in</div>";
-				// }else if( $lo_point['point']=='0' || $lo_point['point']>'0'){
-				}else{
-			?>
+	<!-- 목록, 수정, 삭제 -->
 	<div id="bo_ser">
 		<ul>
 			<!-- <li><a href="/">[Back to list]</a></li> -->
@@ -118,9 +114,6 @@ if ($result->num_rows > 0) {
 			<li><a href="/page/board/delete.php?idx=<?php echo $board['idx']; ?>">[Delete]</a></li>
 		</ul>
 	</div>
-	<?php
-				}
-			?>
 </div>
 
 <!--- 댓글 불러오기 -->
@@ -157,13 +150,7 @@ if ($result->num_rows > 0) {
 		</div>
 	<?php } ?>
 
-	<?php
-				if(!isset($_SESSION['userid'])){
-					echo "<div id='not_use'>You can write after logging in</div>";
-				// }else if( $lo_point['point']=='0' || $lo_point['point']>'0'){
-				}else{
-			?>
-	<!--- Comment input form -->
+	<!--- 댓글 입력 폼 -->
 	<div class="dap_ins">
 		<form action="/page/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
 			<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Id">
@@ -174,10 +161,6 @@ if ($result->num_rows > 0) {
 			</div>
 		</form>
 	</div>
-	<?php
-				}
-			?>
-
 </div><!--- 댓글 불러오기 끝 -->
 
 <?php

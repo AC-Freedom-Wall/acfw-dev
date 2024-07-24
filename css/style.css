@@ -13,9 +13,10 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 	margin: 0;
+	background-color: black;
 }
 header, footer {
-	background-color: #f1f1f1;
+	background-color: black;
 	padding: 20px;
 	text-align: center;
 }
@@ -41,13 +42,7 @@ header, footer {
 	padding: 10px;
 	font-size: 16px;
 }
-div#not_use {
-	margin: 10px 0;
-	font-size: 14px;
-	color: red;
 
-	
-}
 
 
 a {
@@ -275,4 +270,52 @@ ul li {
 }
 #foot_box {
 	height: 50px; 
+}
+
+header, h2, p, h3, b, div, a{
+	color: white;
+}
+	
+#not_use, #user_info, #bo_content{
+color: white;
+}
+
+.right-menu{
+	background-color: black;
+	border: 1px solid white;
+	height: 300px;
+	border-radius: 10px;
+}
+
+#back-to-freeboard a{
+	text-decoration: none;
+	background-color: gray;
+	border-radius: 10px;
+	
+}
+
+#back-to-freeboard a:hover{
+	background-color: rgb(66, 179, 113);
+  }
+
+  .right-menu a{
+	text-decoration: none;
+	background-color: gray;
+	border-radius: 10px;
+  }
+
+  .right-menu a:hover{
+
+		background-color: rgb(66, 179, 113);
+	  }
+	
+#utitle, #uname, #ucontent{
+
+	border-radius: 10px;
+}
+
+#back-home a{
+	text-decoration: none;
+	background-color: gray;
+	border-radius: 10px;
 }

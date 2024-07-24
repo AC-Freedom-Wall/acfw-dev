@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/db.php"; /* db load */
+include $_SERVER['DOCUMENT_ROOT']."/db.php"; /* Load the database */
 ?>
 <link rel="stylesheet" type="text/css" href="/css/jquery-ui.css" />
 <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
@@ -15,8 +15,8 @@ include $_SERVER['DOCUMENT_ROOT']."/db.php"; /* db load */
 </script>
 <?php
 
-$bno = $_GET['idx']; /* bno함수에 idx값을 받아와 넣음*/
-$sql = query("select * from board where idx='".$bno."'"); /* 받아온 idx값을 선택 */
+$bno = $_GET['idx']; /* Get the idx value and store it in the bno variable */
+$sql = query("SELECT * FROM board WHERE idx='".$bno."'"); /* Select the record with the given idx value */
 $board = $sql->fetch_array();
 
 ?>
@@ -25,18 +25,18 @@ $board = $sql->fetch_array();
  		<p>Password<input type="password" name="pw_chk" /> <input type="submit" value="Confirm" /></p>
  	</form>
 </div>
-	 <?php
-	 	$bpw = $board['pw'];
+	<?php
+	$bpw = $board['pw'];
 
-	 	if(isset($_POST['pw_chk'])) //만약 pw_chk POST값이 있다면
-	 	{
-	 		$pwk = $_POST['pw_chk']; // $pwk변수에 POST값으로 받은 pw_chk를 넣습니다.
-			if(password_verify($pwk,$bpw)) //다시 if문으로 DB의 pw와 입력하여 받아온 bpw와 값이 같은지 비교를 하고
-			{
-				$pwk == $bpw;
-			?>
-				<script type="text/javascript">location.replace("read.php?idx=<?php echo $board["idx"]; ?>");</script><!-- pwk와 bpw값이 같으면 read.php로 보내고 -->
-			<?php 
-			}else{ ?>
-				<script type="text/javascript">alert('Invalid password');</script><!--- 아니면 비밀번호가 틀리다는 메시지를 보여줍니다 -->
-			<?php } } ?>
+	if(isset($_POST['pw_chk'])) // If there is a POST value for pw_chk
+	{
+		$pwk = $_POST['pw_chk']; // Store the POST value for pw_chk in the $pwk variable
+		if(password_verify($pwk, $bpw)) // Compare the entered password with the stored password
+		{
+			$pwk == $bpw;
+		?>
+			<script type="text/javascript">location.replace("read.php?idx=<?php echo $board["idx"]; ?>");</script><!-- If passwords match, redirect to read.php -->
+		<?php 
+		}else{ ?>
+			<script type="text/javascript">alert('Invalid password');</script><!-- Otherwise, show an "Invalid password" message -->
+		<?php } } ?>
