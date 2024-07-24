@@ -1,3 +1,3 @@
 <header>
-    <h1>Algonquine College Freedom Wall</h1>
+    <h1>Algonquin College Freedom Wall</h1>
 </header>
