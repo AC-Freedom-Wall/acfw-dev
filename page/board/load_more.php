@@ -13,8 +13,13 @@ if (isset($_POST['offset'])) {
       echo '<div>file : <a href="../../upload/' . $board['file'] . '" download>' . $board['file'] . '</a></div>';
       echo '<div id="bo_content">' . nl2br($board['content']) . '</div>';
       echo '<div id="bo_ser"><ul>';
+	  if(!isset($_SESSION['userid'])){
+		//  echo "<div id='not_use'>You can write after logging in</div>";
+	  // }else if( $lo_point['point']=='0' || $lo_point['point']>'0'){
+	  }else{
       echo '<li><a href="modify.php?idx=' . $board['idx'] . '">[Modify]</a></li>';
       echo '<li><a href="delete.php?idx=' . $board['idx'] . '">[Delete]</a></li>';
+	  }
       echo '</ul></div></div>';
 ?>
 <!--- 댓글 불러오기 -->
@@ -51,6 +56,12 @@ if (isset($_POST['offset'])) {
 		</div>
 	<?php } ?>
 
+	<?php
+				if(!isset($_SESSION['userid'])){
+					echo "<div id='not_use'>You can write after logging in</div>";
+				// }else if( $lo_point['point']=='0' || $lo_point['point']>'0'){
+				}else{
+			?>
 	<!--- 댓글 입력 폼 -->
 	<div class="dap_ins">
 		<form action="/page/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
@@ -62,6 +73,7 @@ if (isset($_POST['offset'])) {
 			</div>
 		</form>
 	</div>
+	<?php } ?>
 </div><!--- 댓글 불러오기 끝 -->
 <?php
 
