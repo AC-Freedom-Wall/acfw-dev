@@ -6,7 +6,7 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 <div class="container">
     <div class="content">
         <h2>Main Content Area</h2>
-        <p>This is where the main content of the page goes.</p>
+        <p>This is where the main content of the page goes!!!.</p>
 
         <?php
 				if(!isset($_SESSION['userid'])){
@@ -14,6 +14,8 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 				// }else if( $lo_point['point']=='0' || $lo_point['point']>'0'){
 				}else{
 			?>
+			
+
 			        <div id="search_box">
     <form action="/page/board/search_result.php" method="get">
       <select name="catgo">
