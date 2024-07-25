@@ -35,7 +35,7 @@
     <link rel="manifest" href="/img/favicon/manifest.json">
     <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="shortcut icon" href="/img/favicon/favicon.ico">
-    <title>Algonquine College Freedom Wall</title>
+    <title>Algonquin College Freedom Wall</title>
     <link rel="stylesheet" type="text/css" href="/css/jquery-ui.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
