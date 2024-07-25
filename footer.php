@@ -1,5 +1,5 @@
 <footer>
-    <p>&copy; 2024 My Website</p>
+    <span>&copy; 2024 My Website</span>
 </footer>
 
 </body>
