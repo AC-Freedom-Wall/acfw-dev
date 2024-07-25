@@ -7,32 +7,59 @@
 	font-family: "Trebuchet MS", sans-serif;
 }
 
-/* header */
+
 body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	margin: 0;
-	background-color: black;
+
+	background-color: rgb(247, 247, 247);
+	color: rgb(51, 51, 51);
 }
-header, footer {
-	background-color: black;
+
+/* header */
+header {
+    background-color: rgb(0, 99, 65);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    width: 100%;
+}
+
+footer {
 	padding: 20px;
-	text-align: center;
+    background-color: rgb(0, 99, 65);
+    color: white;
+    text-align: center;
+    width: 100%;
 }
 .container {
 	display: flex;
 	flex: 1;
+
+	flex-direction: row;
+	justify-content: center;
+	padding-top: 60px; /* To avoid header overlap */
 }
 .content {
 	flex: 3;
 	padding: 20px;
+
+	background-color: rgb(247, 247, 247);
+	border: 1px solid rgb(224, 224, 224);
+	border-radius: 10px;
+	margin-right: 20px;
 }
 .right-menu {
 	flex: 1;
 	padding: 20px;
-	background-color: #f9f9f9;
+
+	background-color: rgb(247, 247, 247);
+	border: 1px solid rgb(224, 224, 224);
+	border-radius: 10px;
 }
+
 .login-form {
 	display: flex;
 	flex-direction: column;
@@ -41,14 +68,36 @@ header, footer {
 	margin-bottom: 10px;
 	padding: 10px;
 	font-size: 16px;
+	border: 1px solid rgb(224, 224, 224);
+	border-radius: 5px;
+}
+
+.login-form button {
+	padding: 10px;
+	font-size: 16px;
+	background-color: rgb(0, 99, 65);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.login-form button:hover {
+	background-color: rgb(51, 51, 51);
 }
 
 
 
 a {
 	text-decoration: none;
-	color:#333;
+
+	color: rgb(0, 99, 65);
 }
+
+a:hover {
+	color: rgb(51, 51, 51);
+}
+
 ul li {
 	list-style:none;
 }
@@ -66,21 +115,37 @@ ul li {
 	width: 900px;
 	position: relative;
 }
+
+#board_read {
+	margin: 20px;
+	padding: 20px;
+	background-color: rgb(202, 235, 221);
+}
+
+.reply_view {
+	margin: 20px;
+	padding: 20px;
+	background-color: rgb(202, 235, 221);
+}
+
 .list-table {
 	margin-top: 40px;
 }
 .list-table thead th{
-	height:40px;
-	border-top:2px solid #09C;
-	border-bottom:1px solid #CCC;
+	height: 40px;
+	border-top: 2px solid rgb(0, 99, 65);
+	border-bottom: 1px solid rgb(204, 204, 204);
 	font-weight: bold;
 	font-size: 17px;
+	color: rgb(51, 51, 51);
 }
 .list-table tbody td{
-	text-align:center;
-	padding:10px 0;
-	border-bottom:1px solid	 #CCC; height:20px;
-	font-size: 14px 
+	text-align: center;
+	padding: 10px 0;
+	border-bottom: 1px solid rgb(204, 204, 204);
+	height: 20px;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
 }
 #write_btn {
 	position: absolute;
@@ -130,7 +195,7 @@ ul li {
 #in_name textarea {
 	font-weight:bold;
 	font-size:26px;
-	color:#333;
+	color:rgb(51, 51, 51);
 	width: 900px;
 	border:none;
 	resize: none;
@@ -141,7 +206,7 @@ ul li {
 #in_title textarea {
 	font-weight:bold;
 	font-size:26px;
-	color:#333;
+	color:rgb(51, 51, 51);
 	width: 900px;
 	border:none;
 	resize: none;
@@ -155,7 +220,7 @@ ul li {
 }
 #in_content textarea {
 	font:14px;
-	color:#333;
+	color:rgb(51, 51, 51);
 	width: 900px;
 	height: 400px;
 	resize: none;
@@ -171,6 +236,15 @@ ul li {
 .bt_se button {
 	width:100px;
 	height:30px;
+
+	background-color: rgb(0, 99, 65);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.bt_se button:hover {
+	background-color: rgb(51, 51, 51);
 }
 #in_lock {
 	margin-top:10px;
@@ -184,6 +258,7 @@ ul li {
 }
 #user_info {
 	font-size:14px;
+	color: rgb(51, 51, 51);
 }
 #user_info ul li {
 	float:left;
@@ -198,10 +273,11 @@ ul li {
 }
 #bo_content {
 	margin-top:20px;
+	color: rgb(51, 51, 51);
 }
 #bo_ser {
 	font-size:14px;
-	color:#333;
+	color: rgb(51, 51, 51)
 	position: absolute;
 	right: 20px;
 }
@@ -256,7 +332,11 @@ ul li {
 }
 #re_content {
 	width:700px;
-	height: 56px; 
+	height: 56px;
+
+	border: 1px solid rgb(224, 224, 224);
+	border-radius: 5px;
+	padding: 10px;
 }
 .dap_ins {
 	margin-top:50px;
@@ -264,25 +344,26 @@ ul li {
 .re_bt {
 	position: absolute;
 	width:100px;
-	height:56px;
+	height:28px;
 	font-size:16px;
 	margin-left: 10px; 
+
+	background-color: rgb(0, 99, 65);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.re_bt:hover {
+	background-color: rgb(51, 51, 51);
 }
 #foot_box {
 	height: 50px; 
 }
-
-header, h2, p, h3, b, div, a{
-	color: white;
-}
 	
-#not_use, #user_info, #bo_content{
-color: white;
-}
-
 .right-menu{
-	background-color: black;
-	border: 1px solid white;
+	background-color: rgb(224, 224, 224);
+	border: 1px solid rgb(224, 224, 224);
 	height: 300px;
 	border-radius: 10px;
 }
@@ -291,23 +372,35 @@ color: white;
 	text-decoration: none;
 	background-color: gray;
 	border-radius: 10px;
-	
+
+	color: white;
+	padding: 10px;
+	display: block;
+	text-align: center;
+}
+
+#back-to-freeboard a:hover {
+	background-color: rgb(66, 179, 113);
 }
 
 #back-to-freeboard a:hover{
 	background-color: rgb(66, 179, 113);
-  }
+}
 
-  .right-menu a{
+.right-menu a{
 	text-decoration: none;
 	background-color: gray;
 	border-radius: 10px;
-  }
 
-  .right-menu a:hover{
+	color: white;
+	padding: 10px;
+	display: block;
+	text-align: center;
+}
 
-		background-color: rgb(66, 179, 113);
-	  }
+.right-menu a:hover{
+	background-color: rgb(66, 179, 113);
+}
 	
 #utitle, #uname, #ucontent{
 
@@ -318,4 +411,22 @@ color: white;
 	text-decoration: none;
 	background-color: gray;
 	border-radius: 10px;
+
+	color: white;
+	padding: 10px;
+	display: block;
+	text-align: center;
+}
+
+#back-home a:hover {
+	background-color: rgb(66, 179, 113);
+}
+
+
+h2, p, h3, b, div, a{
+	color: rgb(51, 51, 51);
+}
+
+#not_use, #user_info, #bo_content{
+	color: rgb(51, 51, 51);
 }
