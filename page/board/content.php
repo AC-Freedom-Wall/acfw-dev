@@ -8,6 +8,8 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
         <h2>Your Voice, Your Space! So speak up!</h2> <br>
         <p>This is a safe haven for voice! Join the conversation today.</p> <br>
 
+		<img src="img/studentspeakoutwatercolor.png" alt="students speakout image">
+
         <?php
 				if(!isset($_SESSION['userid'])){
 					echo "<div id='not_use'>You can write after logging in</div>";
