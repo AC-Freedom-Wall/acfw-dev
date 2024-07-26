@@ -5,8 +5,8 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 ?>
 <div class="container">
     <div class="content">
-        <h2>Main Content Area</h2>
-        <p>This is where the main content of the page goes!!!.</p>
+        <h2>Your Voice, Your Space! So speak up!</h2> <br>
+        <p>This is a safe haven for voice! Join the conversation today.</p> <br>
 
         <?php
 				if(!isset($_SESSION['userid'])){
