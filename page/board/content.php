@@ -12,7 +12,7 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 
         <?php
 				if(!isset($_SESSION['userid'])){
-					echo "<div id='not_use'>You can write after logging in</div>";
+					echo "<div id='not_use'>Log in to start sharing your thoughts</div>";
 				// }else if( $lo_point['point']=='0' || $lo_point['point']>'0'){
 				}else{
 			?>
