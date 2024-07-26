@@ -94,17 +94,19 @@ if ($result->num_rows > 0) {
 <div id="board_read">
 	<h2><?php echo $board['title']; ?></h2>
 		<div id="user_info">
-			<?php echo $board['name']; ?> <?php echo $board['date']; ?> Hit:<?php echo $board['hit']; ?>
-				<div id="bo_line"></div>
+			<?php echo $board['name']; ?>  
+			
+			<!--Hit: --><?php //echo $board['hit']; ?>
+				<!--<div id="bo_line"></div>-->
 		</div>
 		<div>
-		file : <a href="/upload/<?php echo $board['file'];?>" download><?php echo $board['file']; ?></a>
+		<!--file : <a href="/upload/<?php //echo $board['file'];?>" download><?php //echo $board['file']; ?></a>-->
 		</div>
 		<div id="bo_content">
 			<?php echo nl2br("$board[content]"); ?>
 			<?php
 				if($board['file']){
-					echo "<img src='/upload/".$board['file']."' width='100%' height='100%'>";
+					echo "<img src='/upload/".$board['file']."' width='50%' height='50%'>";
 				}
 			?> 
 		</div>
@@ -114,13 +116,14 @@ if ($result->num_rows > 0) {
 			<!-- <li><a href="/">[Back to list]</a></li> -->
 			<li><a href="/page/board/modify.php?idx=<?php echo $board['idx']; ?>">[Modify]</a></li>
 			<li><a href="/page/board/delete.php?idx=<?php echo $board['idx']; ?>">[Delete]</a></li>
+			<li> <?php echo $board['date']; ?> </li>
 		</ul>
 	</div>
 </div>
 
 <!--- 댓글 불러오기 -->
 <div class="reply_view">
-	<h3>List of comments</h3>
+	<h3>Comments</h3>
 		<?php
 			$sql3 = query("select * from reply where con_num='".$board['idx']."' order by idx desc");
 			while($reply = $sql3->fetch_array()){ 
@@ -159,7 +162,7 @@ if ($result->num_rows > 0) {
 			<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="Password">
 			<div style="margin-top:10px; ">
 				<textarea name="content" class="reply_content" id="re_content" ></textarea>
-				<button id="rep_bt" class="re_bt">comments</button>
+				<button id="rep_bt" class="re_bt">comment</button>
 			</div>
 		</form>
 	</div>
