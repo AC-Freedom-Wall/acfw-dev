@@ -1,0 +1,52 @@
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Replace with your preferred font */
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.aboutus {
+    padding: 50px;
+    margin: 30px;
+}
+
+h2 {
+    font-size: 36px;
+    text-align: center;
+    color: rgb(0, 99, 65);
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+h3 {
+    font-size: 28px;
+    color: rgb(0, 99, 65);
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    padding: 10px;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: disc; 
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    padding-left: 30px;
+}
+
