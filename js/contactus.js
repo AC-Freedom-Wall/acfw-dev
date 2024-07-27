@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Add event listeners
-    document.getElementById("name").addEventListener("input", validateName);
-    document.getElementById("email").addEventListener("input", validateEmail);
+    document.getElementById("namecs").addEventListener("input", validateName);
+    document.getElementById("emailcs").addEventListener("input", validateEmail);
     document.getElementById("message").addEventListener("input", validateMessage);
     document.getElementById("contactForm").addEventListener("submit", function(event) {
         event.preventDefault();
@@ -30,7 +30,7 @@ function validateForm() {
 
 // Function to validate name
 function validateName() {
-    const name = document.getElementById("name").value.trim();
+    const name = document.getElementById("namecs").value.trim();
     const nameError = document.getElementById("nameError");
     if (name === '') {
         nameError.innerText = 'Name is required.';
@@ -44,7 +44,7 @@ function validateName() {
 
 // Function to validate email
 function validateEmail() {
-    const email = document.getElementById("email").value.trim();
+    const email = document.getElementById("emailcs").value.trim();
     const emailError = document.getElementById("emailError");
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email === '') {
