@@ -14,7 +14,7 @@ $bpw = $reply['pw'];
 if(password_verify($pwk, $bpw)) 
 	{
 		$sql = query("delete from reply where idx='".$rno."'"); ?>
-	<script type="text/javascript">alert('Your comment has been deleted.'); location.replace("read.php?idx=<?php echo $board["idx"]; ?>");</script>
+	<script type="text/javascript">alert('Your comment has been deleted.'); history.back();</script>
 	<?php 
 	}else{ ?>
 		<script type="text/javascript">alert('Invalid password');history.back();</script>

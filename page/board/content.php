@@ -119,8 +119,8 @@ if ($result->num_rows > 0) {
 				if(isset($_SESSION['userid'])){
 			?>
 			<!-- <li><a href="/">[Back to list]</a></li> -->
-			<li><button class="moddelbutton" href="/page/board/modify.php?idx=<?php echo $board['idx']; ?>">Modify</a></li>
-			<li><button class="moddelbutton" href="/page/board/delete.php?idx=<?php echo $board['idx']; ?>">Delete</a></li>
+			<li><button class="moddelbutton" onclick="location.href='/page/board/modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
+			<li><button class="moddelbutton" onclick="location.href='/page/board/delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
 			<?php
 				}
 			?>
@@ -241,6 +241,21 @@ $(".dat_edit_bt").click(function(){
 				});
 				console.log("dialog_open");
 		});
+$(".dat_delete_bt").click(function(){
+		/* dat_delete_bt클래스 클릭시 동작(댓글 삭제) */
+		var obj = $(this).closest(".dap_lo").find(".dat_delete");
+		obj.dialog({
+			modal:true,
+			width:400,
+			title: "Confirm comment deletion",
+			close: function () {
+			console.log("dialog_close");
+			// location.reload();
+			history.go(0);
+			}
+			});
+			console.log("dialog_open");
+	});
 </script>
 
 
