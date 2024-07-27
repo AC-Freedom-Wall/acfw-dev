@@ -12,7 +12,7 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 
         <?php
 				if(!isset($_SESSION['userid'])){
-					echo "<div id='not_use'>Log in to start sharing your thoughts</div>";
+					echo "<div id='not_use'>Kindly log in to start sharing your thoughts. See what other users are sharing below.</div>";
 				// }else if( $lo_point['point']=='0' || $lo_point['point']>'0'){
 				}else{
 			?>
@@ -117,8 +117,8 @@ if ($result->num_rows > 0) {
 				if(isset($_SESSION['userid'])){
 			?>
 			<!-- <li><a href="/">[Back to list]</a></li> -->
-			<li><button href="/page/board/modify.php?idx=<?php echo $board['idx']; ?>">Modify</a></li>
-			<li><button href="/page/board/delete.php?idx=<?php echo $board['idx']; ?>">Delete</a></li>
+			<li><button class="moddelbutton" href="/page/board/modify.php?idx=<?php echo $board['idx']; ?>">Modify</a></li>
+			<li><button class="moddelbutton" href="/page/board/delete.php?idx=<?php echo $board['idx']; ?>">Delete</a></li>
 			<?php
 				}
 			?>
