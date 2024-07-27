@@ -113,9 +113,15 @@ if ($result->num_rows > 0) {
 	<!-- 목록, 수정, 삭제 -->
 	<div id="bo_ser">
 		<ul>
+		<?php
+				if(isset($_SESSION['userid'])){
+			?>
 			<!-- <li><a href="/">[Back to list]</a></li> -->
 			<li><a href="/page/board/modify.php?idx=<?php echo $board['idx']; ?>">[Modify]</a></li>
 			<li><a href="/page/board/delete.php?idx=<?php echo $board['idx']; ?>">[Delete]</a></li>
+			<?php
+				}
+			?>
 			<li> <?php echo $board['date']; ?> </li>
 		</ul>
 	</div>
@@ -133,8 +139,14 @@ if ($result->num_rows > 0) {
 			<div class="dap_to comt_edit"><?php echo nl2br("$reply[content]"); ?></div>
 			<div class="rep_me dap_to"><?php echo $reply['date']; ?></div>
 			<div class="rep_me rep_menu">
+			<?php
+				if(isset($_SESSION['userid'])){
+			?>
 				<a class="dat_edit_bt" href="#">Modify</a>
 				<a class="dat_delete_bt" href="#">Delete</a>
+			<?php
+				}
+			?>
 			</div>
 			<!-- 댓글 수정 폼 dialog -->
 			<div class="dat_edit">
@@ -156,6 +168,9 @@ if ($result->num_rows > 0) {
 	<?php } ?>
 
 	<!--- 댓글 입력 폼 -->
+	<?php
+				if(isset($_SESSION['userid'])){
+			?>
 	<div class="dap_ins">
 		<form action="/page/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
 			<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Id">
@@ -166,6 +181,7 @@ if ($result->num_rows > 0) {
 			</div>
 		</form>
 	</div>
+	<?php } ?>
 </div><!--- 댓글 불러오기 끝 -->
 
 <?php
