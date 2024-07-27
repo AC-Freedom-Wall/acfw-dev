@@ -341,3 +341,10 @@ footer {
     font-size: 14px;
 	color: white;
 }
+
+.dat_delete {
+	display: none;
+}	
+.dat_edit {
+	display:none;
+}
