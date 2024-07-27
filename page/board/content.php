@@ -94,7 +94,7 @@ if ($result->num_rows > 0) {
 <div id="board_read">
 	<h2><?php echo $board['title']; ?></h2>
 		<div id="user_info">
-			<?php echo "written by ".$board['name']; ?>  
+			<?php echo "written by ".$board['name']; ?> <?php echo "on ".$board['date']; ?>  
 			
 			<!--Hit: --><?php //echo $board['hit']; ?>
 				<!--<div id="bo_line"></div>-->
@@ -103,7 +103,7 @@ if ($result->num_rows > 0) {
 		<!--file : <a href="/upload/<?php //echo $board['file'];?>" download><?php //echo $board['file']; ?></a>-->
 		</div>
 		<div id="bo_content">
-			<?php echo nl2br("$board[content]"); ?>
+			<?php echo nl2br("$board[content]"); ?> 
 			<?php
 				if($board['file']){
 					echo "<img src='/upload/".$board['file']."' width='50%' height='50%'>";
@@ -122,7 +122,6 @@ if ($result->num_rows > 0) {
 			<?php
 				}
 			?>
-			<li> <?php echo $board['date']; ?> </li>
 		</ul>
 	</div>
 </div>
