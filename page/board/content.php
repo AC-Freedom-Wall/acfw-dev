@@ -94,7 +94,7 @@ if ($result->num_rows > 0) {
 <div id="board_read">
 	<h2><?php echo $board['title']; ?></h2>
 		<div id="user_info">
-			<?php echo $board['name']; ?>  
+			<?php echo "written by ".$board['name']; ?>  
 			
 			<!--Hit: --><?php //echo $board['hit']; ?>
 				<!--<div id="bo_line"></div>-->
