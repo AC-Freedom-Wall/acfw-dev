@@ -4,9 +4,9 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 ?>
 
 <div class="confirmationpage">
-        <br><h1>We received your message!</h1> <br>
-        <br><p>Thank you for reaching out to us.</p><br>
-        <br><a href="contactus.php"><button>Send another message</button></a><br>
+        <br><br><br><h1>We received your message!</h1> <br><br><br><br>
+        <br><br><br><p>Thank you for reaching out to us.</p><br><br><br><br><br>
+        <br><br><br><br><a href="contactus.php"><button>Send us another message</button></a><br>
 </div>
 
 <?php
