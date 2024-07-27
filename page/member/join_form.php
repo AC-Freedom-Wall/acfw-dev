@@ -11,9 +11,14 @@ if (isset($_SESSION['userid'])) {
         <form id="signupForm" action="join_ok.php" method="post">
             <div id="join_f">
                 <div class="form-group">
-                    <label for="userid">ID</label>
-                    <div class="mb"><input type="text" class="inp" id="userid" name="userid" placeholder="ID" /></div>
+                    <label for="userid">Username</label>
+                    <div class="mb"><input type="text" class="inp" id="userid" name="userid" placeholder="Username" /></div>
                     <span class="error" id="useridError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="mb"><input type="email" class="inp" id="email" name="email" placeholder="Email" /></div>
+                    <span class="error" id="emailError"></span>
                 </div>
                 <div class="form-group">
                     <label for="userpw">Password</label>
@@ -25,16 +30,11 @@ if (isset($_SESSION['userid'])) {
                     <div class="mb"><input type="password" class="inp" id="retypepw" name="retypepw" placeholder="Retype Password" /></div>
                     <span class="error" id="retypepwError"></span>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <div class="mb"><input type="email" class="inp" id="email" name="email" placeholder="Email" /></div>
-                    <span class="error" id="emailError"></span>
-                </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label for="name">Name</label>
                     <div class="mb"><input type="text" class="inp" id="name" name="name" placeholder="Please enter a name" /></div>
                     <span class="error" id="nameError"></span>
-                </div>
+                </div>-->
                 <div class="form_btn">
                     <button type="submit" class="form_bt">Submit</button>
                     <button type="reset" class="form_bt2">Reset</button>
@@ -134,7 +134,7 @@ function validatePasswordMatch() {
     if (pass !== pass2 || pass2.trim() === "") {
         showError('retypepwError', "x Please retype password.");
 		//retypepwError.innerText = 'x Please retype password.';
-		//nameError.style.display = 'block';
+		//retypepwError.style.display = 'block';
         highlightField('retypepw');
         return false;
     } else {
