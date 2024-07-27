@@ -1,6 +1,6 @@
 <?php 
+include $_SERVER['DOCUMENT_ROOT']."/head.php";
 include $_SERVER['DOCUMENT_ROOT']."/header.php";
-
 if(isset($_SESSION['userid'])){
 	echo "<script>alert('Incorrect approach.'); history.back();</script>"; 
 }else{
@@ -28,4 +28,8 @@ if(isset($_SESSION['userid'])){
 				</div> <!-- join_f end -->
 			</form>
 		</div>
-<?php }
+<?php
+} 
+include $_SERVER['DOCUMENT_ROOT']."/footer.php";
+?>
+
