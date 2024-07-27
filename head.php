@@ -43,7 +43,7 @@
     <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/js/jquery-ui.js"></script>
     <script type="text/javascript" src="/js/common.js"></script>
-    <script type="text/javascript" src="/js/contactus.js"></script>
-    <script type="text/javascript" src="/js/regvalidation.js"></script>
+    <!--<script type="text/javascript" src="/js/contactus.js"></script>-->
+    <!--<script type="text/javascript" src="/js/regvalidation.js"></script>-->
 </head>
 <body>
