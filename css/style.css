@@ -316,12 +316,15 @@ body {
   overflow-x: hidden;
 }
 
-#not_use{
-	color: rgb(51, 51, 51);
-	text-align: center;
-	font-weight: bold;
-	font-size: 24px; /* Adjust the font size as needed */
-	padding: 100px; /* Add padding to create space around the text */
+/* Adjust fixed widths to percentage */
+#board_area,
+#board_write,
+#in_name textarea,
+#in_title textarea,
+#in_content textarea {
+  width: 100%;
+  max-width: 900px; /* Optional: to maintain max width */
+  box-sizing: border-box; /* Include padding and border in width */
 }
 
 footer {
@@ -347,4 +350,11 @@ footer {
 .footer-text {
     font-size: 14px;
 	color: white;
+}
+
+.dat_delete {
+	display: none;
+}	
+.dat_edit {
+	display:none;
 }
