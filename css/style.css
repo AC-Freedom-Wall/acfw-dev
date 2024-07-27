@@ -301,10 +301,11 @@ ul li {
 }
 #bo_ser {
 	font-size:14px;
-	color: rgb(51, 51, 51)
+	color: rgb(51, 51, 51);
 	position: absolute;
 	right: 20px;
 }
+
 #bo_ser > ul > li {
 	float:left;
 	margin-left:10px;
