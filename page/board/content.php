@@ -141,17 +141,18 @@ if ($result->num_rows > 0) {
 			<div ><b></b></div>
 			
 			<div class="rep_me rep_menu">
+			<ul>
 			<?php
 				if(isset($_SESSION['userid'])){
 			?>
 
-				<button class="dat_edit_bt" href="#">Modify</a>
-				<button class="dat_delete_bt" href="#">Delete</a>
+				<li><button class="dat_edit_bt" href="#">Modify</a><li>
+				<li><button class="dat_delete_bt" href="#">Delete</a><li>
 			<?php
 				}
 			?>
+			</ul>
 			</div>
-
 
 			<!-- 댓글 수정 폼 dialog -->
 			<div class="dat_edit">
