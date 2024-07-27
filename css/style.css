@@ -88,7 +88,7 @@ footer {
 	width:fit-content;
 }
 
-.login-form button {
+.login-form button, #loadMore {
 	padding: 10px;
 	font-size: 16px;
 	width: 100%;
@@ -100,7 +100,7 @@ footer {
 	cursor: pointer;
 }
 
-.login-form button:hover {
+.login-form button:hover, #loadMore:hover  {
 	background-color: rgb(51, 51, 51);
 }
 
