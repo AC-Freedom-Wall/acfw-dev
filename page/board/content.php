@@ -117,8 +117,8 @@ if ($result->num_rows > 0) {
 				if(isset($_SESSION['userid'])){
 			?>
 			<!-- <li><a href="/">[Back to list]</a></li> -->
-			<li><a href="/page/board/modify.php?idx=<?php echo $board['idx']; ?>">[Modify]</a></li>
-			<li><a href="/page/board/delete.php?idx=<?php echo $board['idx']; ?>">[Delete]</a></li>
+			<li><button href="/page/board/modify.php?idx=<?php echo $board['idx']; ?>">Modify</a></li>
+			<li><button href="/page/board/delete.php?idx=<?php echo $board['idx']; ?>">Delete</a></li>
 			<?php
 				}
 			?>
@@ -142,8 +142,8 @@ if ($result->num_rows > 0) {
 			<?php
 				if(isset($_SESSION['userid'])){
 			?>
-				<a class="dat_edit_bt" href="#">Modify</a>
-				<a class="dat_delete_bt" href="#">Delete</a>
+				<button class="dat_edit_bt" href="#">Modify</a>
+				<button class="dat_delete_bt" href="#">Delete</a>
 			<?php
 				}
 			?>
@@ -215,6 +215,27 @@ if ($result->num_rows > 0) {
 	});
 </script>
 
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script>
+$(".dat_edit_bt").click(function(){
+		/* dat_edit_bt클래스 클릭시 동작(댓글 수정) */
+			var obj = $(this).closest(".dap_lo").find(".dat_edit");
+			obj.dialog({
+				modal:true,
+				width:650,
+				height:200,
+				title: "Edit comments",
+				close: function () {
+				console.log("dialog_close");
+				// location.reload();
+				history.go(0);
+				}
+				});
+				console.log("dialog_open");
+		});
+</script>
 
 
     <?php
