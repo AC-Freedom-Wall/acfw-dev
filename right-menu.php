@@ -37,7 +37,7 @@
 			<?php }else{ ?><!--세션 userid체크해서 세션값 없으면 로그인 폼 표시 -->
 				<form class="login-form" action="/page/member/login_ok.php" method="post">
 					<ul>
-						<li><input type="text" name="userid" placeholder="ID" required /></li>
+						<li><input type="text" name="userid" placeholder="Username" required /></li>
 						<li><input type="text" name="userpw" placeholder="Password" required /></li><br>
             <li><button type="submit">Login</button></li>
             <li><button onclick="location.href='/page/member/join_form.php'">Registration</button></li>
