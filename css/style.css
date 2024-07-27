@@ -79,16 +79,26 @@ header {
   width: fit-content;
 }
 
-moddelbutton {
-	padding: 10px;
-	font-size: 16px;
-	width: 100%;
-	margin-bottom: 10px;
-	background-color: rgb(0, 99, 65);
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
+  /* Style for the button container */
+  #bo_ser ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Display buttons side by side */
+  }
+
+  /* Style for each button */
+  .moddelbutton {
+    margin-right: 10px; /* Add spacing between buttons */
+    font-size: 14px; /* Adjust font size */
+    padding: 5px 10px; /* Add padding for a smaller button */
+    background-color: #dedada; /* Light gray background */
+    border: 1px solid #ccc; /* Gray border */
+    cursor: pointer;
+  }
+
+  /* Hover effect */
+  .moddelbutton:hover {
+    background-color: #e0e0e0; /* Lighter gray on hover */
   }
 
 .login-form button, #loadMore {
