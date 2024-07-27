@@ -93,12 +93,7 @@ if ($result->num_rows > 0) {
 
 <div id="board_read">
 	<h2><?php echo $board['title']; ?></h2>
-		<div id="user_info">
-			<?php echo "written by ".$board['name']; ?> <?php echo "on ".$board['date']; ?>  
-			
-			<!--Hit: --><?php //echo $board['hit']; ?>
-				<!--<div id="bo_line"></div>-->
-		</div>
+
 		<div>
 		<!--file : <a href="/upload/<?php //echo $board['file'];?>" download><?php //echo $board['file']; ?></a>-->
 		</div>
@@ -110,6 +105,13 @@ if ($result->num_rows > 0) {
 				}
 			?> 
 		</div>
+		<div id="user_info">
+			<?php echo "written by ".$board['name']; ?> <?php echo "on ".$board['date']; ?>  
+			
+			<!--Hit: --><?php //echo $board['hit']; ?>
+				<!--<div id="bo_line"></div>-->
+		</div>
+
 	<!-- 목록, 수정, 삭제 -->
 	<div id="bo_ser">
 		<ul>
@@ -133,20 +135,24 @@ if ($result->num_rows > 0) {
 			$sql3 = query("select * from reply where con_num='".$board['idx']."' order by idx desc");
 			while($reply = $sql3->fetch_array()){ 
 		?>
+		<div class="dap_to comt_edit"><?php echo nl2br("$reply[content]"); ?></div>
+		<div class="rep_me dap_to">written by <?php echo $reply['name'];?> on <?php echo $reply['date']; ?></div>	
 		<div class="dap_lo">
-			<div><b><?php echo $reply['name'];?></b></div>
-			<div class="dap_to comt_edit"><?php echo nl2br("$reply[content]"); ?></div>
-			<div class="rep_me dap_to"><?php echo $reply['date']; ?></div>
+			<div ><b></b></div>
+			
 			<div class="rep_me rep_menu">
 			<?php
 				if(isset($_SESSION['userid'])){
 			?>
+
 				<button class="dat_edit_bt" href="#">Modify</a>
 				<button class="dat_delete_bt" href="#">Delete</a>
 			<?php
 				}
 			?>
 			</div>
+
+
 			<!-- 댓글 수정 폼 dialog -->
 			<div class="dat_edit">
 				<form method="post" action="/page/board/reply_modify_ok.php">
