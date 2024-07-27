@@ -34,7 +34,7 @@ header {
 }
 
 .content {
-  flex: 3;
+  flex: 9;
   padding: 20px;
   background-color: rgb(247, 247, 247);
   border: 1px solid rgb(224, 224, 224);
@@ -87,17 +87,49 @@ header {
   }
 
   /* Style for each button */
-  .moddelbutton {
+  .moddelbutton, .dat_edit_bt{
     margin-right: 10px; /* Add spacing between buttons */
-    font-size: 14px; /* Adjust font size */
+    font-size: 12px; /* Adjust font size */
     padding: 5px 10px; /* Add padding for a smaller button */
-    background-color: #dedada; /* Light gray background */
-    border: 1px solid #ccc; /* Gray border */
+    background-color: rgb(202, 235, 221); /* Light gray background */
     cursor: pointer;
+	color: rgb(51, 51, 51);
   }
 
   /* Hover effect */
   .moddelbutton:hover {
+    background-color: #e0e0e0; /* Lighter gray on hover */
+  }
+
+  #user_info, .rep_me.dap_to{
+	font-size:12px;
+	color: rgb(51, 51, 51);
+	padding-left: 100px;
+}
+  
+
+
+  .dap_lo {
+    display: flex; /* Create a flex container */
+    justify-content: space-between; /* Align items to the right */
+    align-items: center; /* Vertically center items */
+    margin-bottom: 10px; /* Add spacing between comment sections */
+  }
+
+  .dat_edit_bt,
+  .dat_delete_bt {
+    font-size: 12px; /* Adjust font size for smaller buttons */
+    padding: 5px 10px; /* Add padding for a compact button */
+    background-color: rgb(202, 235, 221); /* Light gray background */
+    cursor: pointer;
+	color:black;
+  }
+
+
+
+  /* Hover effect */
+  .dat_edit_bt:hover,
+  .dat_delete_bt:hover {
     background-color: #e0e0e0; /* Lighter gray on hover */
   }
 
@@ -148,13 +180,8 @@ ul li {
 	background-color: rgb(202, 235, 221);
 }
 
-#user_info {
-	font-size:12px;
-	color: rgb(51, 51, 51);
-	padding: 10px;
-}
 
-#bo_content {
+#bo_content,  .dap_to.comt_edit{
 	margin-top:20px;
 	color: rgb(51, 51, 51);
 	padding: 10px;
