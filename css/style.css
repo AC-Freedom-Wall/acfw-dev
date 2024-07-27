@@ -203,28 +203,3 @@ body {
   max-width: 900px; /* Optional: to maintain max width */
   box-sizing: border-box; /* Include padding and border in width */
 }
-
-footer {
-	padding: 20px;
-    background-color: rgb(0, 99, 65);
-    color: white;
-    text-align: center;
-    width: 100%;
-}
-
-.footer-links {
-    display: flex;
-    gap: 10px;
-	color: white;
-}
-
-.footer-links a {
-    text-decoration:none;
-    font-weight: bold;
-	color: white;
-}
-
-.footer-text {
-    font-size: 14px;
-	color: white;
-}
