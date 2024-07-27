@@ -8,7 +8,7 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
     <form id="contactForm" action="" method="GET">
         <div class="form-group">
             <label for="namecs">Pseudonym:</label>
-            <input type="text" id="namecs" name="namecs">
+            <input type="text" id="namecs" name="namecs" placeholder="Stay anonymous. Just use as pseudonym.">
             <span class="error" id="nameError"></span>
         </div>
         <div class="form-group">
