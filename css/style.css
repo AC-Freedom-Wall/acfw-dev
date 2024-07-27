@@ -135,13 +135,19 @@ ul li {
 }
 
 #board_read {
-	margin: 20px;
+	margin-top: 20pxpx;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 0px;
 	padding: 20px;
 	background-color: rgb(202, 235, 221);
 }
 
 .reply_view {
-	margin: 20px;
+	margin-top: 0px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 40px;
 	padding: 20px;
 	background-color: rgb(202, 235, 221);
 }
@@ -269,11 +275,11 @@ ul li {
 }
 
 /* 게시판 read */
-#board_read {
+/* #board_read {
 	width:900px;
 	position: relative;
 	word-break:break-all;
-}
+} */
 #user_info {
 	font-size:14px;
 	color: rgb(51, 51, 51);
@@ -305,11 +311,11 @@ ul li {
 }
 
 /* 댓글 */
-.reply_view {
+/* .reply_view {
 	width:900px;
 	margin-top:100px; 
 	word-break:break-all;
-}
+} */
 .dap_lo {
 	font-size: 14px;
 	padding:10px 0 15px 0;

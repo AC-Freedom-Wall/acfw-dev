@@ -10,4 +10,4 @@ $board = $sql2->fetch_array();
 
 $sql3 = query("update reply set content='".$_POST['content']."' where idx = '".$rno."'");//reply테이블의 idx가 rno변수에 저장된 값의 content를 선택해서 값 저장
 ?> 
-<script type="text/javascript">alert('Fixed.'); location.replace("read.php?idx=<?php echo $bno; ?>");</script>
+<script type="text/javascript">alert('Fixed.'); history.back();</script>";
