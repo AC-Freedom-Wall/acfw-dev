@@ -14,8 +14,10 @@ if (isset($_POST['offset'])) {
       echo '<div>file : <a href="../../upload/' . $board['file'] . '" download>' . $board['file'] . '</a></div>';
       echo '<div id="bo_content">' . nl2br($board['content']) . '</div>';
       echo '<div id="bo_ser"><ul>';
-      echo '<li><a href="modify.php?idx=' . $board['idx'] . '">[Modify]</a></li>';
-      echo '<li><a href="delete.php?idx=' . $board['idx'] . '">[Delete]</a></li>';
+	  if(isset($_SESSION['userid'])){
+		echo '<li><a href="modify.php?idx=' . $board['idx'] . '">[Modify]</a></li>';
+		echo '<li><a href="delete.php?idx=' . $board['idx'] . '">[Delete]</a></li>';
+	  }
       echo '</ul></div></div>';
 ?>
 <!-- Load comments -->
@@ -30,8 +32,12 @@ if (isset($_POST['offset'])) {
 			<div class="dap_to comt_edit"><?php echo nl2br("$reply[content]"); ?></div>
 			<div class="rep_me dap_to"><?php echo $reply['date']; ?></div>
 			<div class="rep_me rep_menu">
+			<?php
+				if(isset($_SESSION['userid'])){
+			?>
 				<a class="dat_edit_bt" href="#">Modify</a>
 				<a class="dat_delete_bt" href="#">Delete</a>
+			<?php } ?>
 			</div>
 			<!-- Comment edit form dialog -->
 			<div class="dat_edit">
@@ -52,6 +58,9 @@ if (isset($_POST['offset'])) {
 		</div>
 	<?php } ?>
 
+	<?php
+				if(isset($_SESSION['userid'])){
+			?>
 	<!-- Comment input form -->
 	<div class="dap_ins">
 		<form action="/page/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
@@ -63,6 +72,7 @@ if (isset($_POST['offset'])) {
 			</div>
 		</form>
 	</div>
+	<?php } ?>
 </div><!-- End of comments section -->
 <?php
 
