@@ -2,474 +2,204 @@
 
 /* reset */
 * {
-	margin: 0 auto;
-	padding: 0;
-	font-family: "Trebuchet MS", sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Trebuchet MS", sans-serif;
 }
 
-
 body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	margin: 0;
-
-	background-color: rgb(247, 247, 247);
-	color: rgb(51, 51, 51);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: rgb(247, 247, 247);
+  color: rgb(51, 51, 51);
 }
 
 /* header */
 header {
-    background-color: rgb(0, 99, 65);
-    color: white;
-    padding: 50px 0;
-    text-align: center;
-    width: 100%;
+  background-color: rgb(0, 99, 65);
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+  width: 100%;
 }
 
 footer {
-	padding: 20px;
-    background-color: rgb(0, 99, 65);
-    color: white;
-    text-align: center;
-    width: 100%;
+  padding: 20px;
+  background-color: rgb(0, 99, 65);
+  color: white;
+  text-align: center;
+  width: 100%;
 }
+
 .container {
-	display: flex;
-	flex: 1;
-
-	flex-direction: row;
-	justify-content: center;
-	padding-top: 60px; /* To avoid header overlap */
+  display: flex;
+  flex: 1;
+  flex-direction: row; /* Initial direction */
+  justify-content: center;
+  padding-top: 60px; /* To avoid header overlap */
 }
+
 .content {
-	flex: 3;
-	padding: 20px;
-
-	background-color: rgb(247, 247, 247);
-	border: 1px solid rgb(224, 224, 224);
-	border-radius: 10px;
-	margin-right: 20px;
+  flex: 3;
+  padding: 20px;
+  background-color: rgb(247, 247, 247);
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 10px;
+  margin-right: 20px;
 }
+
 .right-menu {
-	flex:auto;
-	padding: 1px;
-	border-radius: 1px;
+  flex: auto;
+  padding: 1px;
+  border-radius: 1px;
 }
 
-.right-menu a{
-	text-decoration: none;
-	background-color: gray;
-	border-radius: 10px;
-	color: white;
-	padding: 10px;
-	display: block;
-	text-align: center;
+.right-menu a {
+  text-decoration: none;
+  background-color: gray;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  display: block;
+  text-align: center;
 }
 
-.right-menu a:hover{
-	background-color: rgb(66, 179, 113);
+.right-menu a:hover {
+  background-color: rgb(66, 179, 113);
 }
-	
+
 .login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
 }
 
 .login-form input {
-	margin-bottom: 10px;
-	padding: 10px;
-	font-size: 16px;
-	border: 1px solid rgb(224, 224, 224);
-	border-radius: 5px;
-	text-align: center;
-	width:fit-content;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 5px;
+  text-align: center;
+  width: fit-content;
 }
 
 .login-form button, #loadMore {
-	padding: 10px;
-	font-size: 16px;
-	width: 100%;
-	margin-bottom: 10px;
-	background-color: rgb(0, 99, 65);
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: rgb(0, 99, 65);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.login-form button:hover, #loadMore:hover  {
-	background-color: rgb(51, 51, 51);
+.login-form button:hover, #loadMore:hover {
+  background-color: rgb(51, 51, 51);
 }
-
-
 
 a {
-	text-decoration: none;
-
-	color: rgb(0, 99, 65);
+  text-decoration: none;
+  color: rgb(0, 99, 65);
 }
 
 a:hover {
-	color: rgb(51, 51, 51);
+  color: rgb(51, 51, 51);
 }
 
 ul li {
-	list-style:none;
+  list-style: none;
 }
 
-/* 공통 */
-.fl {
-	float:left;
-}
-.tc {
-	text-align:center;
-}
+/* Media query for smartphones */
+@media screen and (max-width: 767px) {
+  .container {
+    flex-direction: column; /* Change direction for small screens */
+    padding-top: 20px;
+  }
 
-/* 게시판 목록 */
-#board_area {
-	width: 900px;
-	position: relative;
-}
-
-#board_read {
-	margin-top: 20pxpx;
-	margin-left: 20px;
-	margin-right: 20px;
-	margin-bottom: 0px;
-	padding: 20px;
-	background-color: rgb(202, 235, 221);
-}
-
-.reply_view {
-	margin-top: 0px;
-	margin-left: 20px;
-	margin-right: 20px;
-	margin-bottom: 40px;
-	padding: 20px;
-	background-color: rgb(202, 235, 221);
-}
-
-.list-table {
-	margin-top: 40px;
-}
-.list-table thead th{
-	height: 40px;
-	border-top: 2px solid rgb(0, 99, 65);
-	border-bottom: 1px solid rgb(204, 204, 204);
-	font-weight: bold;
-	font-size: 17px;
-	color: rgb(51, 51, 51);
-}
-.list-table tbody td{
-	text-align: center;
-	padding: 10px 0;
-	border-bottom: 1px solid rgb(204, 204, 204);
-	height: 20px;
-	font-size: 14px;
-	color: rgb(51, 51, 51);
-}
-#write_btn {
-	position: absolute;
-	margin-top:20px;
-	right: 0;
-}
-.re_ct {
-	font-weight:bold;
-	color:blue;
-}
-#page_num {
-	font-size: 14px;
-	margin-left: 260px;
-	margin-top:30px; 
-}
-#page_num ul li {
-	float: left;
-	margin-left: 10px; 
-	text-align: center;
-}
-.fo_re {
-	font-weight: bold;
-	color:red;
-	margin-left: 15px; 
-}
-#search_box {
-	margin-top:30px;
-	text-align: right;
-}
-#search_box2 {
-	text-align: center;
-	margin-top: 30px;
-}
-
-/* 게시판 글쓰기 */
-#board_write {
-	width:900px;
-	position:relative;
-	margin:0 auto;
-}
-#write_area {
-	margin-top:70px;
-	font-size:14px;}
-#in_name {
-	margin-top:30px;
-}
-#in_name textarea {
-	font-weight:bold;
-	font-size:26px;
-	color:rgb(51, 51, 51);
-	width: 900px;
-	border:none;
-	resize: none;
-}
-#in_title {
-	margin-top:30px;
-}
-#in_title textarea {
-	font-weight:bold;
-	font-size:26px;
-	color:rgb(51, 51, 51);
-	width: 900px;
-	border:none;
-	resize: none;
-}
-.wi_line {
-	border:solid 1px lightgray;
-	margin-top:10px;
-}
-#in_content {
-	margin-top:10px;
-}
-#in_content textarea {
-	font:14px;
-	color:rgb(51, 51, 51);
-	width: 900px;
-	height: 400px;
-	resize: none;
-}
-#in_pw input {
-	font:14px;
-	margin-top:10px;
-}
-.bt_se {
-	margin-top:20px;
-	text-align:center;
-}
-.bt_se button {
-	width:100px;
-	height:30px;
-
-	background-color: rgb(0, 99, 65);
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-}
-.bt_se button:hover {
-	background-color: rgb(51, 51, 51);
-}
-#in_lock {
-	margin-top:10px;
-}
-
-/* 게시판 read */
-/* #board_read {
-	width:900px;
-	position: relative;
-	word-break:break-all;
-} */
-#user_info {
-	font-size:14px;
-	color: rgb(51, 51, 51);
-}
-#user_info ul li {
-	float:left;
-	margin-left:10px;
-}
-#bo_line {
-	width:900px;
-	height:2px;
-	background: gray;
-	margin-left: 0;
-	margin-top:20px;
-}
-#bo_content {
-	margin-top:20px;
-	color: rgb(51, 51, 51);
-}
-#bo_ser {
-	font-size:1px;
-	color: rgb(51, 51, 51);
-	position: ;
-	right: 20px;
-}
-
-#bo_ser > ul > li {
-	float:left;
-	margin-left:10px;
-	font-size:10px;
-}
-
-/* 댓글 */
-/* .reply_view {
-	width:900px;
-	margin-top:100px; 
-	word-break:break-all;
-} */
-.dap_lo {
-	font-size: 14px;
-	padding:10px 0 15px 0;
-	border-bottom: solid 1px gray;
-}
-.dap_to {
-	margin-top:5px;
-}
-.rep_me {
-	font-size:12px;
-}
-.rep_me ul li {
-	float:left;
-	width: 30px;
-}
-.dat_delete {
-	display: none;
-}	
-.dat_edit {
-	display:none;
-}
-.dap_sm {
-	position: absolute;
-	top: 10px;
-}
-.dap_edit_t{
-	width:520px;
-	height:70px;
-	position: absolute;
-	top: 40px;
-}
-.re_mo_bt {
-	position: absolute;
-	top:40px;
-	right: 5px;
-	width: 90px;
-	height: 72px;
-}
-#re_content {
-	width:700px;
-	height: 56px;
-
-	border: 1px solid rgb(224, 224, 224);
-	border-radius: 5px;
-	padding: 10px;
-}
-.dap_ins {
-	margin-top:50px;
-}
-.re_bt {
-	position: absolute;
-	width:100px;
-	height:28px;
-	font-size:16px;
-	margin-left: 10px; 
-
-	background-color: rgb(0, 99, 65);
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-}
-.re_bt:hover {
-	background-color: rgb(51, 51, 51);
-}
-#foot_box {
-	height: 50px; 
-}
-	
-
-#back-to-freeboard a{
-	text-decoration: none;
-	background-color: gray;
-	border-radius: 10px;
-
-	color: white;
-	padding: 10px;
-	display: block;
-	text-align: center;
-}
-
-#back-to-freeboard a:hover {
-	background-color: rgb(66, 179, 113);
-}
-
-#back-to-freeboard a:hover{
-	background-color: rgb(66, 179, 113);
-}
-
-
-#utitle, #uname, #ucontent{
-
-	border-radius: 10px;
-}
-
-#back-home a{
-	text-decoration: none;
-	background-color: gray;
-	border-radius: 10px;
-
-	color: white;
-	padding: 10px;
-	display: block;
-	text-align: center;
-}
-
-#back-home a:hover {
-	background-color: rgb(66, 179, 113);
-}
-
-
-h2, p, h3, b, div, a{
-	color: rgb(51, 51, 51);
-}
-
-#user_info, #bo_content{
-	color: rgb(51, 51, 51);
-}
-
-#not_use{
-	color: rgb(51, 51, 51);
-	text-align: center;
-	font-weight: bold;
-	font-size: 24px; /* Adjust the font size as needed */
-	padding: 100px; /* Add padding to create space around the text */
-}
-
-.moddelbutton {
-    display: block;
+  .content {
+	order: 2;
+    margin-right: 0;
+    margin-bottom: 20px;
     width: 100%;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+  }
 
+  .right-menu {
+    order: 1;
+	width: 100%;
+    margin-bottom: 20px;
+  }
 
-.footer-links {
-    display: flex;
-    gap: 10px;
-	color: white;
-}
+  .login-form input,
+  .login-form button,
+  #loadMore {
+    width: 100%;
+  }
 
-.footer-links a {
-    text-decoration:none;
-    font-weight: bold;
-	color: white;
-}
+  #board_area,
+  #board_write,
+  #in_name textarea,
+  #in_title textarea,
+  #in_content textarea {
+    width: 100%;
+  }
 
-.footer-text {
+  .list-table {
     font-size: 14px;
-	color: white;
+  }
+
+  .list-table thead {
+    display: none;
+  }
+
+  .list-table tbody td {
+    display: block;
+    text-align: left;
+    padding: 5px;
+  }
+
+  .list-table tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    width: 100px;
+  }
+
+  #page_num {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  #search_box,
+  #search_box2 {
+    text-align: center;
+  }
+
+  #write_area,
+  #in_title textarea,
+  #in_content textarea {
+    width: 100%;
+  }
+}
+
+/* Ensure the body does not overflow */
+body {
+  overflow-x: hidden;
+}
+
+/* Adjust fixed widths to percentage */
+#board_area,
+#board_write,
+#in_name textarea,
+#in_title textarea,
+#in_content textarea {
+  width: 100%;
+  max-width: 900px; /* Optional: to maintain max width */
+  box-sizing: border-box; /* Include padding and border in width */
 }
