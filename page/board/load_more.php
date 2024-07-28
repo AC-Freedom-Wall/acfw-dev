@@ -39,22 +39,6 @@ if (isset($_POST['offset'])) {
 				<a class="dat_delete_bt" href="#">Delete</a>
 			<?php } ?>
 			</div>
-			<!-- Comment edit form dialog -->
-			<div class="dat_edit">
-				<form method="post" action="/page/board/reply_modify_ok.php">
-					<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
-					<input type="password" name="pw" class="dap_sm" placeholder="Password" />
-					<textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
-					<input type="submit" value="Edit" class="re_mo_bt">
-				</form>
-			</div>
-			<!-- Comment deletion password confirmation -->
-			<div class='dat_delete'>
-				<form action="/page/board/reply_delete.php" method="post">
-					<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
-			 		<p>Password<input type="password" name="pw" /> <input type="submit" value="Confirm"></p>
-				 </form>
-			</div>
 		</div>
 	<?php } ?>
 
