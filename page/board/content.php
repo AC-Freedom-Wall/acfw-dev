@@ -113,7 +113,7 @@ if ($result->num_rows > 0) {
 		</div>
 
 	<!-- 목록, 수정, 삭제 -->
-	<div id="bo_ser">
+	<div class="bo_ser">
 		<ul>
 		<?php
 				if(isset($_SESSION['userid'])){
@@ -140,14 +140,14 @@ if ($result->num_rows > 0) {
 		<div class="dap_lo">
 			<div ><b></b></div>
 			
-			<div class="rep_me rep_menu">
+			<div class="bo_ser">
 			<ul>
 			<?php
 				if(isset($_SESSION['userid'])){
 			?>
 
-				<li><button class="dat_edit_bt" href="#">Modify</a><li>
-				<li><button class="dat_delete_bt" href="#">Delete</a><li>
+				<li><button class="moddelbutton" href="#">Modify</a></li>
+				<li><button class="moddelbutton" href="#">Delete</a></li>
 			<?php
 				}
 			?>
