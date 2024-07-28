@@ -269,7 +269,7 @@ ul li {
 
   .content {
 	order: 2;
-    margin-right: 0;
+    padding: 0;
     margin-bottom: 20px;
     width: 100%;
   }
@@ -288,17 +288,6 @@ ul li {
     width: 100%;
   }
 
-
-  /* Adjust fixed widths to percentage */
-#board_area,
-#board_write,
-#in_name textarea,
-#in_title textarea,
-#in_content textarea {
-  width: 100%;
-  max-width: 900px; /* Optional: to maintain max width */
-  box-sizing: border-box; /* Include padding and border in width */
-}
 
   .list-table {
     font-size: 14px;
