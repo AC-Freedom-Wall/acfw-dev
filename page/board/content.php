@@ -18,7 +18,8 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 			?>
 			
 
-			        <div id="search_box">
+	<div id="search_box">
+	<h2>Search for a post here.</h2>
     <form action="/page/board/search_result.php" method="get">
       <select name="catgo">
         <option value="title">Title</option>
@@ -35,13 +36,14 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 
 
         <div id="write_area">
+			<h2>Write your post here.</h2>
 			<form action="/page/board/write_ok.php" method="post" enctype="multipart/form-data">
 				<div id="in_title">
 					<textarea name="title" id="utitle" rows="1" cols="55" placeholder="Title" maxlength="100" required></textarea>
 				</div>
 				<div class="wi_line"></div>
 				<div id="in_name">
-					<textarea name="name" id="uname" rows="1" cols="55" placeholder="Name" maxlength="100" required></textarea>
+					<textarea name="name" id="uname" rows="1" cols="55" placeholder="Pseudonym" maxlength="100" required></textarea>
 				</div>
 				<div class="wi_line"></div>
 				<div id="in_content">
@@ -182,7 +184,7 @@ if ($result->num_rows > 0) {
 		<form action="/page/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
 			<div style="margin-top:10px; ">
 				<textarea name="content" class="reply_content" id="re_content" ></textarea>
-				<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Username or another pseudonym">
+				<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Pseudonym">
 				<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="Password">
 				<button id="rep_bt" class="re_bt">comment</button>
 			</div>
