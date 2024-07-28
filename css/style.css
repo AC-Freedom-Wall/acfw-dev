@@ -103,7 +103,7 @@ header {
 }
 
   /* Hover effect */
-  .moddelbutton:hover, .re_bt:hover  {
+  .moddelbutton:hover, .re_bt:hover, .dat_edit_bt:hover, .dat_delete_bt:hover  {
     background-color: #e0e0e0; /* Lighter gray on hover */
   }
 
