@@ -146,8 +146,9 @@ if ($result->num_rows > 0) {
 				if(isset($_SESSION['userid'])){
 			?>
 
-				<li><button class="moddelbutton" href="#">Modify</a></li>
-				<li><button class="moddelbutton" href="#">Delete</a></li>
+				<li><button class="dat_edit_bt" href="#">Modify</a><li>
+				<li><button class="dat_delete_bt" href="#">Delete</a><li>
+
 			<?php
 				}
 			?>
