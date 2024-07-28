@@ -107,6 +107,33 @@ header {
     background-color: #e0e0e0; /* Lighter gray on hover */
   }
 
+  select[name="catgo"] {
+    /* Add your desired styles here */
+    font-size: 14px; /* Adjust font size */
+    padding: 5px; /* Add padding for a comfortable size */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Text color */
+    cursor: pointer;
+  }
+  
+  /* Optional hover effect */
+  select[name="catgo"]:hover {
+    background-color: #e0e0e0; /* Lighter gray on hover */
+  }
+
+  /* Style for the checkbox */
+#in_lock input[type="checkbox"] {
+  margin: 10px; /* Add spacing between checkbox and text */
+}
+
+/* Style for the file input */
+#in_file input[type="file"] {
+  border: 1px solid #ccc; /* Gray border */
+  padding: 10px; /* Add padding for a comfortable size */
+}
+
 
   
 
@@ -231,9 +258,6 @@ ul li {
 }
 .bt_se button:hover {
 	background-color: rgb(51, 51, 51);
-}
-#in_lock {
-	margin-top:10px;
 }
 
 .dap_ins{
