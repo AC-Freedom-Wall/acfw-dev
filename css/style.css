@@ -86,14 +86,14 @@ header {
 }
 
   /* Style for the button container */
-.bo_ser ul, rep_me.rep_menu ul {
+.bo_ser ul {
     list-style: none;
     padding: 0;
     display: flex; /* Display buttons side by side */
 }
 
   /* Style for each button */
-.moddelbutton, .dat_edit_bt, .dat_delete_bt{
+.moddelbutton, .re_bt {
     margin-right: 10px; /* Add spacing between buttons */
     font-size: 12px; /* Adjust font size */
     padding: 5px 10px; /* Add padding for a smaller button */
@@ -103,7 +103,7 @@ header {
 }
 
   /* Hover effect */
-  .moddelbutton:hover {
+  .moddelbutton:hover, .re_bt:hover  {
     background-color: #e0e0e0; /* Lighter gray on hover */
   }
 
@@ -234,6 +234,10 @@ ul li {
 }
 #in_lock {
 	margin-top:10px;
+}
+
+.dap_ins{
+	margin: 20px;
 }
 
 

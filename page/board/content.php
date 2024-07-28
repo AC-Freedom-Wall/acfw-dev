@@ -180,10 +180,10 @@ if ($result->num_rows > 0) {
 			?>
 	<div class="dap_ins">
 		<form action="/page/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
-			<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Id">
-			<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="Password">
 			<div style="margin-top:10px; ">
 				<textarea name="content" class="reply_content" id="re_content" ></textarea>
+				<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Username or another pseudonym">
+				<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="Password">
 				<button id="rep_bt" class="re_bt">comment</button>
 			</div>
 		</form>
