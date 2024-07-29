@@ -170,7 +170,7 @@ ul li {
 }
 
 #board_read {
-	margin-top: 10px;
+	margin-top: 50px;
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-bottom: 0px;
@@ -407,4 +407,37 @@ footer {
 }	
 .dat_edit {
 	display:none;
+}
+
+.dat_edit {
+  /* Add your desired styles here */
+  padding: 10px; /* Add padding for spacing */
+  border: 1px solid #f01111; /* Gray border */
+  background-color: #ce7070; /* Light gray background */
+  width: 100%;
+  
+}
+
+.dat_edit input[type="password"],
+.dat_edit textarea {
+  /* Style input fields and textarea */
+  width: 100%; /* Make them fill the container width */
+  padding: 5px; /* Add padding for a comfortable size */
+  margin-bottom: 10px; /* Add spacing between elements */
+  height:20px;
+}
+
+.dat_edit input[type="submit"] {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(0, 99, 65);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Optional hover effect for the button */
+.dat_edit input[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
