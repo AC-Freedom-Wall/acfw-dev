@@ -235,7 +235,7 @@ ul li {
 	margin-top:10px;
 }
 #in_content textarea {
-	font:14px;
+	font-size:26px;
 	color:rgb(51, 51, 51);
 	width: 900px;
 	height: 200px;
@@ -273,6 +273,13 @@ img.photomain {
   height: auto; /* Maintain aspect ratio */
 }
 
+#not_use{
+	color: rgb(51, 51, 51);
+	text-align: center;
+	font-weight: bold;
+	font-size: 24px; /* Adjust the font size as needed */
+	padding: 100px; /* Add padding to create space around the text */
+}
 
 
 /* Media query for smartphones */
