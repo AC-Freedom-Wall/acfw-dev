@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener("submit", function(event) {
         if (!validate()) {
             event.preventDefault(); // Prevent form submission if validation fails
-        
+        }
     });
 });
 
@@ -76,11 +76,11 @@ function validate() {
     if (!validatePassword()) isValid = false;
     if (!validatePasswordMatch()) isValid = false;
 
-    if (isValid) {
-        // Clear form fields and provide data in URI
-        // document.getElementById("signupForm").reset();
-        // alert("Form submitted successfully!");
-    }
+    // if (isValid) {
+    //     // Clear form fields and provide data in URI
+    //     document.getElementById("signupForm").reset();
+    //     alert("Form submitted successfully!");
+    // }
     return isValid;
 }
 
