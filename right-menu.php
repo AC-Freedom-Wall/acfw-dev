@@ -6,7 +6,8 @@
 					$sql = query("select * from levelpoint where userid='".$_SESSION['userid']."'");
 					$lo_point = $sql->fetch_array();
 			?>
-			Welcome <?php echo $_SESSION['userid']; ?>. &nbsp;&nbsp;&nbsp;<a href="/page/member/logout.php">Logout</a><br />
+			Welcome <?php echo $_SESSION['userid']; ?>! &nbsp;&nbsp;&nbsp;
+			<br> <br> <a href="/page/member/logout.php">Logout</a> <br>
 				<?php
 					switch ($lo_point['point']) {
 					case '0':
