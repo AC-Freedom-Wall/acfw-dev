@@ -294,6 +294,9 @@ img.photomain {
 
 /* Media query for smartphones */
 @media screen and (max-width: 767px) {
+  #mainpageheader a{
+    font-size: 1.0em
+  }
   .container {
     flex-direction: column; /* Change direction for small screens */
     padding-top: 20px;
