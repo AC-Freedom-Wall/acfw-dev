@@ -14,6 +14,6 @@ $id_check = query("select * from member where id='$userid'");
 $sql = query("insert into member (id,pw,name,email) values('".$userid."','".$userpw."','".$username."','".$email."')");
 $sql2 = query("insert into levelpoint (userid,point) values('".$userid."','1')");
 ?>
-<script type="text/javascript">alert('Your signup is complete.');</script>
+<script type="text/javascript">alert('Welcome to the Algonquin College Freedom Wall.\nPlease leave your story.');</script>
 <meta http-equiv="refresh" content="0 url=/">
 <?php } ?>

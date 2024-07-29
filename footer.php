@@ -1,8 +1,8 @@
 <footer>
 <nav class="footer-links">
-      <a href="http://dev.acfw.com/">Home</a>
-      <a href="http://dev.acfw.com/aboutus.php">About Us</a>
-      <a href="http://dev.acfw.com/contactus.php">Contact Us</a>
+      <a href="/index.php">Home</a>
+      <a href="/aboutus.php">About Us</a>
+      <a href="/contactus.php">Contact Us</a>
 </nav>
 <br>
 <span>Algonquin College Freedom Wall</span><br>
