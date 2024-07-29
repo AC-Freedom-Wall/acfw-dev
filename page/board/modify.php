@@ -12,7 +12,8 @@ include $_SERVER['DOCUMENT_ROOT']."/db.php";
  ?>
     <div id="board_write">
         <h1 id="back-to-freeboard"><a href="/">Back to Freeboard</a></h1>
-        <h4>Edit your post.</h4>
+        
+        <h3>Edit your post below.</h3>
             <div id="write_area">
                 <form action="modify_ok.php?idx=<?php echo $bno; ?>" method="post">
                     <div id="in_title">
@@ -33,6 +34,10 @@ include $_SERVER['DOCUMENT_ROOT']."/db.php";
                         <button type="submit">Write a post</button>
                     </div>
                 </form>
+                
+                <button class="back-to-freeboard" href="/">Back to Freeboard</a>
+                <!--<button class="back-to-freeboard" href="/">Back to Freeboard</a>-->
+                <!--<button id="back-to-freeboard"><a href="/">Back to Freeboard</a></button>-->
             </div>
         </div>
     </body>
