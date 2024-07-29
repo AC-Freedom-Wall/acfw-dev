@@ -1,19 +1,19 @@
 
 
 .contactus {
-    width: 50%;
-    margin: 50px auto;
+    width: 30%;
+    margin: 100px auto;
     background-color: #fff;
     padding: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 500px;;
+    height: 550px;
 }
 
 .confirmationpage{
     width: 30%;
-    margin: 50px auto;
+    margin: 100px auto;
     background-color: #fff;
-    padding: 50px;
+    padding: 60px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 550px;
     text-align: center;
