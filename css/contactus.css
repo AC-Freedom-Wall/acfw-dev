@@ -19,6 +19,16 @@
     text-align: center;
 }
 
+#join_form_in {
+    width: 30%;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 600px;
+}
+
 .form-group {
     margin: 15px 35px 30px 15px;
 }
@@ -90,16 +100,6 @@ button:hover {
 .confirmation.error {
     background-color: #f2dede;
     color: #a94442;
-}
-
-#join_form_in {
-    width: 50%;
-    margin: 30px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    height: 600px;
 }
 
 #join_form_in h2 {
