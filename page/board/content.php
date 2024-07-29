@@ -6,7 +6,7 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 <div class="container">
     <div class="content">
         <h2>Your Voice, Your Space! So speak up!</h2> <br>
-        <p>This is a safe haven for voice! Join the conversation today.</p> <br>
+        <h4>This is a safe haven for voice! Join the conversation today.</h4> <br>
 
 		<img class="photomain" src="img/studentspeakoutwatercolor.png" alt="students speakout image">
 
@@ -132,7 +132,7 @@ if ($result->num_rows > 0) {
 
 <!--- 댓글 불러오기 -->
 <div class="reply_view">
-	<h3>Comments</h3>
+	<h4>Comments</h4>
 		<?php
 			$sql3 = query("select * from reply where con_num='".$board['idx']."' order by idx desc");
 			while($reply = $sql3->fetch_array()){ 
