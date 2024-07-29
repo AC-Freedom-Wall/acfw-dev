@@ -10,9 +10,7 @@ include $_SERVER['DOCUMENT_ROOT']."/db.php";
 	$sql = query("select * from board where idx='$bno';");
 	$board = $sql->fetch_array();
  ?>
-    <div id="board_write">
-        <h1 id="back-to-freeboard"><a href="/">Back to Freeboard</a></h1>
-        
+    <div id="board_write">      
         <h3>Edit your post below.</h3>
             <div id="write_area">
                 <form action="modify_ok.php?idx=<?php echo $bno; ?>" method="post">
@@ -35,9 +33,7 @@ include $_SERVER['DOCUMENT_ROOT']."/db.php";
                     </div>
                 </form>
                 
-                <button class="back-to-freeboard" href="/">Back to Freeboard</a>
-                <!--<button class="back-to-freeboard" href="/">Back to Freeboard</a>-->
-                <!--<button id="back-to-freeboard"><a href="/">Back to Freeboard</a></button>-->
+                <button id="back-to-freeboard" onclick="history.back()">Back to Freeboard</button>
             </div>
         </div>
     </body>
