@@ -20,7 +20,7 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 
 	<div id="search_box">
 	<h2>Search for a post here.</h2>
-    <form action="/page/board/search_result.php" method="get">
+    <form action="/page/board/search_result_new.php" method="get">
       <select name="catgo">
         <option value="title">Title</option>
         <option value="name">Name</option>
@@ -132,7 +132,7 @@ if ($result->num_rows > 0) {
 
 <!--- 댓글 불러오기 -->
 <div class="reply_view">
-	<h4>Comments</h4>
+	<h3>Comments</h3>
 		<?php
 			$sql3 = query("select * from reply where con_num='".$board['idx']."' order by idx desc");
 			while($reply = $sql3->fetch_array()){ 
