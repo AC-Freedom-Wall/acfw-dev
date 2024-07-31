@@ -3,9 +3,9 @@ include $_SERVER['DOCUMENT_ROOT']."/db.php";
 $date = date('Y-m-d');
 $userpw = password_hash($_POST['pw'], PASSWORD_DEFAULT);
 if(isset($_POST['lockpost'])){
-	$lo_post = '1';
+	$in_lock = '1';
 }else{
-	$lo_post = '0';
+	$in_lock = '0';
 }
 
 if ($_FILES['b_file']['error'] === UPLOAD_ERR_OK) {
@@ -16,15 +16,17 @@ if ($_FILES['b_file']['error'] === UPLOAD_ERR_OK) {
 	$folder = $_SERVER['DOCUMENT_ROOT']."/upload/".$filename;
 	if (file_exists($tmpfile)) {
 		move_uploaded_file($tmpfile, $folder);
+		$sql2 = query("update levelpoint set point = point + 5 where userid='".$_SESSION['userid']."'");
 	} else {
 		echo "Error: Uploaded file does not exist.";
 	}
 } else {
-	echo "Error: File upload failed.";
+//	echo "Error: File upload failed.";
 }
 
 $mqq = query("alter table board auto_increment =1"); //auto_increment 값 초기화
-$sql= query("insert into board(name,pw,title,content,date,lock_post,file) values('".addslashes($_POST['name'])."','".addslashes($userpw)."','".addslashes($_POST['title'])."','".addslashes($_POST['content'])."','".$date."','".$lo_post."','".$o_name."')");
-echo "<script>alert('Writing is complete.');</script>";
+$sql= query("insert into board(name,pw,title,content,date,lock_post,file) values('".addslashes($_POST['name'])."','".addslashes($userpw)."','".addslashes($_POST['title'])."','".addslashes($_POST['content'])."','".$date."','".$in_lock."','".$o_name."')");
+$sql2 = query("update levelpoint set point = point + 5 where userid='".$_SESSION['userid']."'");
+// echo "<script>alert('Writing is complete.');</script>";
 ?>
 <meta http-equiv="refresh" content="0 url=/"/>

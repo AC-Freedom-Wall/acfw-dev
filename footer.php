@@ -1,3 +1,8 @@
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+
 <footer>
 <nav class="footer-links">
       <a href="/index.php">Home</a>

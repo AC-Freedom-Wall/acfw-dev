@@ -11,7 +11,26 @@
 	{
 		$_SESSION['userid'] = $member["id"];
 		$_SESSION['userpw'] = $member["pw"];
-		echo "<script>alert('You are logged in.'); location.href='/index.php';</script>";
+		echo "<script>location.href='/index.php';</script>";
+
+		// If the last login is not today, update the points and login time
+		$sql = query("select last_login from levelpoint where id='".$_POST['userid']."'");
+		$levelpoint = $sql->fetch_array();
+		$last_login = $levelpoint['last_login'];
+
+		if($last_login < date('Y-m-d')){ // If last login is not today, update points and login time
+			$query = "UPDATE levelpoint 
+					SET point = point + 1, last_login = CURDATE() 
+					WHERE userid = '".$_SESSION['userid']."' 
+						AND last_login < CURDATE();";
+			$result = query($query);
+		}else{ // If last login is today, update only login time
+			$query = "UPDATE levelpoint 
+					SET last_login = CURDATE() 
+					WHERE userid = '".$_SESSION['userid']."' 
+						AND last_login != CURDATE();";
+			$result = query($query);
+		}
 	}else{ 
 	// 비밀번호가 같지 않다면 알림창을 띄우고 전 페이지로 돌아갑니다
 		echo "<script>alert('Confirm your username or password.'); history.back();</script>";

@@ -12,7 +12,7 @@ $id_check = query("select * from member where id='$userid'");
 		echo "<script>alert('The ID is duplicated.'); history.back();</script>";
 	}else{
 $sql = query("insert into member (id,pw,name,email) values('".$userid."','".$userpw."','".$username."','".$email."')");
-$sql2 = query("insert into levelpoint (userid,point) values('".$userid."','1')");
+$sql2 = query("insert into levelpoint (userid,point) values('".$userid."','10')");
 ?>
 <script type="text/javascript">alert('Welcome to the Algonquin College Freedom Wall.\nPlease leave your story.');</script>
 <meta http-equiv="refresh" content="0 url=/">

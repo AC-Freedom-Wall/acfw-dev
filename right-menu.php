@@ -6,34 +6,15 @@
 					$sql = query("select * from levelpoint where userid='".$_SESSION['userid']."'");
 					$lo_point = $sql->fetch_array();
 			?>
-			Welcome <?php echo $_SESSION['userid']; ?>! &nbsp;&nbsp;&nbsp;
+			Welcome <?php echo $_SESSION['userid']; ?>! 🤗
 			<br> <br> <a href="/page/member/logout.php">Logout</a> <br>
 				<?php
-					switch ($lo_point['point']) {
-					case '0':
-					echo "Member Grade : 0 Points";
-					break;
-
-					case '1':
-					echo "Member Grade : 1 Points";
-					break;
-
-					case '2':
-					echo "Member Grade : 2 Points";
-					break;
-					
-					case '3';
-					echo "Member Grade : 3 Points";
-					break;
-
-					case '4';
-					echo "Member Grade : 4 Points";
-					break;
-
-					default:
-					echo "Member Grade : Admin ",$lo_point['point'],"Points";
-					break;
-				} //switch문 끝 
+				echo "You got ",$lo_point['point']," Points 😀<br><br>";
+				echo "Write a post and get 5 points 😮<br>";
+				echo "With uploading a picture, you get 5 points more! 😱<br>";
+				echo "Comment and get 1 point 😘<br>";
+				echo "And every day you log in, you get 1 point! 🫡<br><br>";
+				echo "🤩 Share your story with us! 🥰";
 			?>
 			<?php }else{ ?><!--세션 userid체크해서 세션값 없으면 로그인 폼 표시 -->
 				<form class="login-form" action="/page/member/login_ok.php" method="post">

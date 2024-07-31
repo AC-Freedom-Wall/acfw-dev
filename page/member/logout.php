@@ -3,4 +3,4 @@
 	session_destroy();
 ?>
 <meta charset="utf-8">
-<script>alert("You are logged out."); location.href="/index.php"; </script>
+<script>alert("Bye <?php echo $_SESSION['userid']; ?>. See you soon."); location.href="/index.php"; </script>

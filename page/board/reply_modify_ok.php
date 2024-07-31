@@ -10,5 +10,5 @@ $sql2 = query("select * from board where idx='".$bno."'");//board테이블에서
 $board = $sql2->fetch_array();
 
 $sql3 = query("update reply set content='".addslashes($_POST['content'])."' where idx = '".$rno."'");//reply테이블의 idx가 rno변수에 저장된 값의 content를 선택해서 값 저장
-?> 
-<script type="text/javascript">alert('Fixed.'); history.back();</script>";
+?>
+<script type="text/javascript">history.back();</script>";

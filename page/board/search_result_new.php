@@ -9,7 +9,7 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
  $catagory = $_GET['catgo'];
  $search_con = $_GET['search'];
 ?>
- <h2>'<?php echo $catagory; ?>' form '<?php echo $search_con; ?>' Search results</h2>
+ <h2>'<?php echo $catagory; ?>' from '<?php echo $search_con; ?>' Search results</h2>
  <h4 ><a style="background-color: gray" href="/">Back to home</a></h4>
 
  <?php
