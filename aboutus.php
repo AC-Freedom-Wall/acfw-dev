@@ -1,6 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/head.php";
-include $_SERVER['DOCUMENT_ROOT']."/header.php";
+    include $_SERVER['DOCUMENT_ROOT']."/head.php";
+    include $_SERVER['DOCUMENT_ROOT']."/header.php";
 ?>
 
 <link rel="stylesheet" type="text/css" href="/css/aboutus.css" />
@@ -26,6 +26,6 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 
 </div>
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/footer.php";
+    include $_SERVER['DOCUMENT_ROOT']."/footer.php";
 ?>
 
