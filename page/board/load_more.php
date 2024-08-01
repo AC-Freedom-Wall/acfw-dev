@@ -14,10 +14,9 @@ if (isset($_POST['offset'])) {
 				<div id="bo_content">
 					<?php
 						echo nl2br("$board[content]");
-					?> 
-					<?php
+						
 						if($board['file']){
-							echo "<img src='/upload/".$board['file']."' width='50%' height='50%'>";
+							echo "<br><img src='/upload/".$board['file']."' width='50%' height='50%'>";
 						}
 					?> 
 				</div>

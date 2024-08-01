@@ -83,7 +83,7 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 							echo nl2br("$board[content]"); // content
 							
 							if($board['file']){
-								echo "<img src='/upload/".$board['file']."' width='50%' height='50%'>"; // image
+								echo "<br><img src='/upload/".$board['file']."' width='50%' height='50%'>"; // image
 							}
 						?> 
 					</div>

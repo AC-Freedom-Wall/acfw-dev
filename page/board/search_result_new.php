@@ -29,10 +29,11 @@ if ($result->num_rows > 0) {
 		<!--file : <a href="/upload/<?php //echo $board['file'];?>" download><?php //echo $board['file']; ?></a>-->
 		</div>
 		<div id="bo_content">
-			<?php echo nl2br("$board[content]"); ?> 
-			<?php
+			<?php 
+				echo nl2br("$board[content]");
+				
 				if($board['file']){
-					echo "<img src='/upload/".$board['file']."' width='50%' height='50%'>";
+					echo "<br><img src='/upload/".$board['file']."' width='50%' height='50%'>";
 				}
 			?> 
 		</div>
