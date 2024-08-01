@@ -27,7 +27,7 @@ $(document).ready(function(){
 		function(data,success){
 			if(success=="success"){
 				$(".reply_view").html(data);
-				alert("A comment has been made");	
+				// alert("A comment has been made");	
 			}else{
 				alert("Comment failed");
 			}
