@@ -9,110 +9,98 @@ if (isset($_POST['offset'])) {
   if ($result->num_rows > 0) {
     while($board = $result->fetch_array()){
 ?>
-		<div id="board_read">
-		<h2><?php echo $board['title']; ?></h2>
-	
-			<div>
-			<!--file : <a href="/upload/<?php //echo $board['file'];?>" download><?php //echo $board['file']; ?></a>-->
-			</div>
-			<div id="bo_content">
-				<?php echo nl2br("$board[content]"); ?> 
-				<?php
-					if($board['file']){
-						echo "<img src='/upload/".$board['file']."' width='50%' height='50%'>";
-					}
-				?> 
-			</div>
-			<div id="user_info">
-				<?php echo "written by ".$board['name']; ?> <?php echo "on ".$board['date']; ?>  
-				
-				<!--Hit: --><?php //echo $board['hit']; ?>
-					<!--<div id="bo_line"></div>-->
-			</div>
-	
-		<!-- 목록, 수정, 삭제 -->
-		<div class="bo_ser">
-			<ul>
-			<?php
-					if(isset($_SESSION['userid'])){
-				?>
-				<!-- <li><a href="/">[Back to list]</a></li> -->
-				<li><button class="moddelbutton" onclick="location.href='/page/board/post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
-				<li><button class="moddelbutton" onclick="location.href='/page/board/post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
-				<?php
-					}
-				?>
-			</ul>
-		</div>
-	</div>
-	
-	<!--- 댓글 불러오기 -->
-	<div class="reply_view">
-		<h3>Comments</h3>
-			<?php
-				$sql3 = query("select * from reply where con_num='".$board['idx']."' order by idx desc");
-				while($reply = $sql3->fetch_array()){ 
-			?>
-			<div class="dap_to comt_edit"><?php echo nl2br("$reply[content]"); ?></div>
-			<div class="rep_me dap_to">written by <?php echo $reply['name'];?> on <?php echo $reply['date']; ?></div>	
-			<div class="dap_lo">
-				<div ><b></b></div>
-				
-				<div class="bo_ser">
-				<ul>
-				<?php
-					if(isset($_SESSION['userid'])){
-				?>
-	
-					<li><button class="dat_edit_bt" href="#">Modify</a></li>
-					<li><button class="dat_delete_bt" href="#">Delete</a></li>
-	
-				<?php
-					}
-				?>
-				</ul>
+			<div id="board_read">
+				<h2><?php echo $board['title']; ?></h2>
+				<div id="bo_content">
+					<?php
+						echo nl2br("$board[content]");
+					?> 
+					<?php
+						if($board['file']){
+							echo "<img src='/upload/".$board['file']."' width='50%' height='50%'>";
+						}
+					?> 
 				</div>
+				<div id="user_info">
+					<?php echo "written by ".$board['name']; ?> <?php echo "on ".$board['date']; ?>  
+				</div>
+				<div class="bo_ser">
+					<ul>
+						<?php
+							if(isset($_SESSION['userid'])){
+						?>
+						<li><button class="moddelbutton" onclick="location.href='/page/board/post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
+						<li><button class="moddelbutton" onclick="location.href='/page/board/post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
+						<?php
+							}
+						?>
+					</ul>
+				</div>
+			</div>
 	
-				<!-- 댓글 수정 폼 dialog -->
-				<div class="dat_edit">
-					<form method="post" action="/page/board/reply_modify_ok.php">
-						<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
-						<input type="password" name="pw" class="dap_sm" placeholder="Password" />
-						<textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
-						<input type="submit" value="Edit" class="re_mo_bt">
+			<div class="reply_view">
+				<h3>Comments</h3>
+				<?php
+					$sql3 = query("select * from reply where con_num='".$board['idx']."' order by idx desc");
+					while($reply = $sql3->fetch_array()){ 
+				?>
+				<div class="dap_to comt_edit"><?php echo nl2br("$reply[content]"); ?></div>
+				<div class="rep_me dap_to">written by <?php echo $reply['name'];?> on <?php echo $reply['date']; ?></div>	
+				<div class="dap_lo">
+					<div ><b></b></div>
+					
+					<div class="bo_ser">
+					<ul>
+					<?php
+						if(isset($_SESSION['userid'])){
+					?>
+						<li><button class="dat_edit_bt" href="#">Modify</a></li>
+						<li><button class="dat_delete_bt" href="#">Delete</a></li>
+					<?php
+						}
+					?>
+					</ul>
+					</div>
+		
+					<div class="dat_edit">
+						<form method="post" action="/page/board/reply_modify_ok.php">
+							<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
+							<input type="password" name="pw" class="dap_sm" placeholder="Password" />
+							<textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
+							<input type="submit" value="Edit" class="re_mo_bt">
+						</form>
+					</div>
+					<!-- 댓글 삭제 비밀번호 확인 -->
+					<div class='dat_delete'>
+						<form action="/page/board/reply_delete.php" method="post">
+							<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
+							<p>Password<input type="password" name="pw" /> <input type="submit" value="Conform"></p>
+						</form>
+					</div>
+				</div>
+				<?php } ?>
+			
+				<?php
+					if(isset($_SESSION['userid'])){
+				?>
+				<div class="dap_ins">
+					<form action="/page/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
+						<div style="margin-top:10px; ">
+							<textarea name="content" class="reply_content" id="re_content" ></textarea>
+							<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Pseudonym">
+							<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="Password">
+							<button id="rep_bt" class="re_bt">comment</button>
+						</div>
 					</form>
 				</div>
-				<!-- 댓글 삭제 비밀번호 확인 -->
-				<div class='dat_delete'>
-					<form action="/page/board/reply_delete.php" method="post">
-						<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
-						 <p>Password<input type="password" name="pw" /> <input type="submit" value="Conform"></p>
-					 </form>
-				</div>
+				<?php } ?>
 			</div>
-		<?php } ?>
-	
-		<!--- 댓글 입력 폼 -->
 		<?php
-					if(isset($_SESSION['userid'])){
-				?>
-		<div class="dap_ins">
-			<form action="/page/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
-				<div style="margin-top:10px; ">
-					<textarea name="content" class="reply_content" id="re_content" ></textarea>
-					<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Pseudonym">
-					<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="Password">
-					<button id="rep_bt" class="re_bt">comment</button>
-				</div>
-			</form>
-		</div>
-		<?php } ?>
-	</div><!--- 댓글 불러오기 끝 -->
-	
-	<?php
-	  }
-  } else {
-    echo 'No more posts to load';
-  }
+		}
+	} else {
+		?>
+		<script type="text/javascript">alert('No more posts to load');</script>
+<?php
+	}
 }
 ?>
