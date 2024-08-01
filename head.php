@@ -22,7 +22,5 @@
     <title>Algonquin College Freedom Wall</title>
     <link rel="stylesheet" type="text/css" href="/css/jquery-ui.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/css/aboutus.css" />
-    <link rel="stylesheet" type="text/css" href="/css/contactus.css" />
 </head>
 <body>
