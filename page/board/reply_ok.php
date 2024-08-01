@@ -8,11 +8,11 @@
         $sql = query("insert into reply(con_num,name,pw,content) values('".$bno."','".addslashes($_POST['dat_user'])."','".addslashes($userpw)."','".addslashes($_POST['content'])."')");
         $sql2 = query("update levelpoint set point = point + 1 where userid='".$_SESSION['userid']."'");
 
-        // echo "<script>alert('A comment has been made.');";
+        // echo "<script>alert('A comment has been made.');</script>";
     }
     else
     {
-        echo "<script>alert('Comment failed.');";
+        echo "<script>alert('Comment failed.');</script>";
     }
 	//location.href='/page/board/read.php?idx=$bno';</script>";
     echo "<script>history.back();</script>";

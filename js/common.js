@@ -72,9 +72,9 @@ $(document).ready(function(){
 
 document.addEventListener('DOMContentLoaded', () => {
     // Add event listeners
-    document.getElementById("namecs").addEventListener("input", validateName);
-    document.getElementById("emailcs").addEventListener("input", validateEmail);
-    document.getElementById("message").addEventListener("input", validateMessage);
+    document.getElementById("namecs").addEventListener("input", validateContactName);
+    document.getElementById("emailcs").addEventListener("input", validateContactEmail);
+    document.getElementById("message").addEventListener("input", validateContactMessage);
     document.getElementById("contactForm").addEventListener("submit", function(event) {
         event.preventDefault();
         if (validateForm()) {
@@ -93,15 +93,15 @@ document.addEventListener('DOMContentLoaded', () => {
 function validateForm() {
     let isValid = true;
 
-    if (!validateName()) isValid = false;
-    if (!validateEmail()) isValid = false;
-    if (!validateMessage()) isValid = false;
+    if (!validateContactName()) isValid = false;
+    if (!validateContactEmail()) isValid = false;
+    if (!validateContactMessage()) isValid = false;
 
     return isValid;
 }
 
 // Function to validate name
-function validateName() {
+function validateContactName() {
     const name = document.getElementById("namecs").value.trim();
     const nameError = document.getElementById("nameError");
     if (name === '') {
@@ -109,13 +109,13 @@ function validateName() {
         nameError.style.display = 'block';
         return false;
     } else {
-        clearError('nameError');
+        clearContactError('nameError');
         return true;
     }
 }
 
 // Function to validate email
-function validateEmail() {
+function validateContactEmail() {
     const email = document.getElementById("emailcs").value.trim();
     const emailError = document.getElementById("emailError");
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -128,13 +128,13 @@ function validateEmail() {
         emailError.style.display = 'block';
         return false;
     } else {
-        clearError('emailError');
+        clearContactError('emailError');
         return true;
     }
 }
 
 // Function to validate message
-function validateMessage() {
+function validateContactMessage() {
     const message = document.getElementById("message").value.trim();
     const messageError = document.getElementById("messageError");
     if (message === '') {
@@ -142,16 +142,18 @@ function validateMessage() {
         messageError.style.display = 'block';
         return false;
     } else {
-        clearError('messageError');
+        clearContactError('messageError');
         return true;
     }
 }
 
 // Function to clear error messages
-function clearError(elementId) {
+function clearContactError(elementId) {
     document.getElementById(elementId).innerText = '';
     document.getElementById(elementId).style.display = 'none';
 }
+
+// JoinForm.js
 
 // Add Event listener for DOMContentLoaded event to the entire HTML document to start validation
 document.addEventListener('DOMContentLoaded', () => {

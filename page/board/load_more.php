@@ -10,18 +10,18 @@ if (isset($_POST['offset'])) {
     while($board = $result->fetch_array()){
 ?>
 			<div id="board_read">
-				<h2><?php echo $board['title']; ?></h2>
+				<h2><?php echo htmlspecialchars($board['title']); ?></h2>
 				<div id="bo_content">
 					<?php
-						echo nl2br("$board[content]");
-						
+						echo htmlspecialchars("$board[content]");
+
 						if($board['file']){
 							echo "<br><img src='/upload/".$board['file']."' width='50%' height='50%'>";
 						}
 					?> 
 				</div>
 				<div id="user_info">
-					<?php echo "written by ".$board['name']; ?> <?php echo "on ".$board['date']; ?>  
+					<?php echo "written by ".htmlspecialchars($board['name']); ?> <?php echo "on ".$board['date']; ?>  
 				</div>
 				<div class="bo_ser">
 					<ul>
@@ -43,8 +43,8 @@ if (isset($_POST['offset'])) {
 					$sql3 = query("select * from reply where con_num='".$board['idx']."' order by idx desc");
 					while($reply = $sql3->fetch_array()){ 
 				?>
-				<div class="dap_to comt_edit"><?php echo nl2br("$reply[content]"); ?></div>
-				<div class="rep_me dap_to">written by <?php echo $reply['name'];?> on <?php echo $reply['date']; ?></div>	
+				<div class="dap_to comt_edit"><?php echo htmlspecialchars("$reply[content]"); ?></div>
+				<div class="rep_me dap_to">written by <?php echo htmlspecialchars($reply['name']);?> on <?php echo $reply['date']; ?></div>	
 				<div class="dap_lo">
 					<div ><b></b></div>
 					
@@ -69,7 +69,6 @@ if (isset($_POST['offset'])) {
 							<input type="submit" value="Edit" class="re_mo_bt">
 						</form>
 					</div>
-					<!-- 댓글 삭제 비밀번호 확인 -->
 					<div class='dat_delete'>
 						<form action="/page/board/reply_delete.php" method="post">
 							<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">

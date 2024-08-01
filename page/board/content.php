@@ -77,10 +77,10 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 				while($board = $result->fetch_array()){
 		?>
 			<div id="board_read">
-				<h2><?php echo $board['title']; ?></h2> <!-- title -->
+				<h2><?php echo htmlspecialchars($board['title']); ?></h2> <!-- title -->
 					<div id="bo_content">
 						<?php
-							echo nl2br("$board[content]"); // content
+							echo htmlspecialchars("$board[content]"); // content
 							
 							if($board['file']){
 								echo "<br><img src='/upload/".$board['file']."' width='50%' height='50%'>"; // image
@@ -88,7 +88,7 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 						?> 
 					</div>
 					<div id="user_info"> <!-- user info -->
-						<?php echo "written by ".$board['name']; ?> <?php echo "on ".$board['date']; ?>  
+						<?php echo "written by ".htmlspecialchars($board['name']); ?> <?php echo "on ".$board['date']; ?>  
 					</div>
 					<div class="bo_ser"> <!-- modify, delete buttons -->
 						<ul>
@@ -112,8 +112,8 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 					$sql3 = query("select * from reply where con_num='".$board['idx']."' order by idx desc");
 					while($reply = $sql3->fetch_array()){ 
 				?>
-				<div class="dap_to comt_edit"><?php echo nl2br("$reply[content]"); ?></div>
-				<div class="rep_me dap_to">written by <?php echo $reply['name'];?> on <?php echo $reply['date']; ?></div>	
+				<div class="dap_to comt_edit"><?php echo htmlspecialchars("$reply[content]"); ?></div>
+				<div class="rep_me dap_to">written by <?php echo htmlspecialchars($reply['name']);?> on <?php echo $reply['date']; ?></div>	
 				<div class="dap_lo">
 					<div ><b></b></div>
 					
