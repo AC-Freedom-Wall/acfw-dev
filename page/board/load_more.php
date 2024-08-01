@@ -37,8 +37,8 @@ if (isset($_POST['offset'])) {
 					if(isset($_SESSION['userid'])){
 				?>
 				<!-- <li><a href="/">[Back to list]</a></li> -->
-				<li><button class="moddelbutton" onclick="location.href='/page/board/modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
-				<li><button class="moddelbutton" onclick="location.href='/page/board/delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
+				<li><button class="moddelbutton" onclick="location.href='/page/board/post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
+				<li><button class="moddelbutton" onclick="location.href='/page/board/post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
 				<?php
 					}
 				?>

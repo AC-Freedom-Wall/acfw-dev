@@ -34,7 +34,7 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 		<!-- start write post -->
         <div id="write_area">
 			<h2>Write your post here.</h2>
-			<form action="/page/board/write_ok.php" method="post" enctype="multipart/form-data">
+			<form action="/page/board/post_write_ok.php" method="post" enctype="multipart/form-data">
 				<div id="in_title">
 					<textarea name="title" id="utitle" rows="1" cols="55" placeholder="Title" maxlength="100" required></textarea>
 				</div>
@@ -95,8 +95,8 @@ include $_SERVER['DOCUMENT_ROOT']."/header.php";
 							<?php
 								if(isset($_SESSION['userid'])){
 							?>
-							<li><button class="moddelbutton" onclick="location.href='/page/board/modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
-							<li><button class="moddelbutton" onclick="location.href='/page/board/delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
+							<li><button class="moddelbutton" onclick="location.href='/page/board/post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
+							<li><button class="moddelbutton" onclick="location.href='/page/board/post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
 							<?php
 								}
 							?>

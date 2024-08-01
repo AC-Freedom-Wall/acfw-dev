@@ -13,7 +13,7 @@ include $_SERVER['DOCUMENT_ROOT']."/db.php";
     <div id="board_write">      
         <h3>Edit your post below.</h3>
             <div id="write_area">
-                <form action="modify_ok.php?idx=<?php echo $bno; ?>" method="post">
+                <form action="post_modify_ok.php?idx=<?php echo $bno; ?>" method="post">
                     <div id="in_title">
                         <textarea name="title" id="utitle" rows="1" cols="55" placeholder="Title" maxlength="100" required><?php echo $board['title']; ?></textarea>
                     </div>

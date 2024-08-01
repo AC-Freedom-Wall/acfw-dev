@@ -11,7 +11,6 @@ if(isset($_POST['lockpost'])){
 if ($_FILES['b_file']['error'] === UPLOAD_ERR_OK) {
 	$tmpfile = $_FILES['b_file']['tmp_name'];
 	$o_name = $_FILES['b_file']['name'];
-	//$filename = iconv("UTF-8", "EUC-KR",$_FILES['b_file']['name']);
 	$filename = $_FILES['b_file']['name'];
 	$folder = $_SERVER['DOCUMENT_ROOT']."/upload/".$filename;
 	if (file_exists($tmpfile)) {
@@ -24,9 +23,8 @@ if ($_FILES['b_file']['error'] === UPLOAD_ERR_OK) {
 //	echo "Error: File upload failed.";
 }
 
-$mqq = query("alter table board auto_increment =1"); //auto_increment 값 초기화
+$mqq = query("alter table board auto_increment =1"); //auto_increment initialize
 $sql= query("insert into board(name,pw,title,content,date,lock_post,file) values('".addslashes($_POST['name'])."','".addslashes($userpw)."','".addslashes($_POST['title'])."','".addslashes($_POST['content'])."','".$date."','".$in_lock."','".$o_name."')");
 $sql2 = query("update levelpoint set point = point + 5 where userid='".$_SESSION['userid']."'");
-// echo "<script>alert('Writing is complete.');</script>";
 ?>
 <meta http-equiv="refresh" content="0 url=/"/>
