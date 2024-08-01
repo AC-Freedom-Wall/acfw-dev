@@ -3,8 +3,6 @@
     include $_SERVER['DOCUMENT_ROOT']."/header.php";
 ?>
 
-<link rel="stylesheet" type="text/css" href="/css/aboutus.css" />
-
 <div class="aboutus">
 
     <h2>About Us: the Algonquin College Freedom Wall</h2>

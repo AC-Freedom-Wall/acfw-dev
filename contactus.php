@@ -3,8 +3,6 @@
     include $_SERVER['DOCUMENT_ROOT']."/header.php";
 ?>
 
-<link rel="stylesheet" type="text/css" href="/css/contactus.css" />
-
 <div class="contactus">
     <h2>Contact Us</h2><br>
     <form id="contactForm" action="" method="GET">
