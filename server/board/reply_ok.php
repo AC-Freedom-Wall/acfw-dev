@@ -1,5 +1,5 @@
 <?php
-	include "../../db.php";
+	include "../db.php";
 
     $bno = $_GET['idx'];
     $userpw = password_hash($_POST['dat_pw'], PASSWORD_DEFAULT);

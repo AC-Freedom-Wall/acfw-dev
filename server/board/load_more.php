@@ -1,6 +1,6 @@
 <?php
 
-include "../../db.php";
+include "../db.php";
 
 if (isset($_POST['offset'])) {
   $offset = intval($_POST['offset']);
@@ -16,7 +16,7 @@ if (isset($_POST['offset'])) {
 						echo htmlspecialchars("$board[content]");
 
 						if($board['file']){
-							echo "<br><img src='../../upload/".$board['file']."' width='50%' height='50%'>";
+							echo "<br><img src='../upload/".$board['file']."' width='50%' height='50%'>";
 						}
 					?> 
 				</div>

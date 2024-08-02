@@ -1,5 +1,5 @@
 <?php
-include "../../db.php";
+include "../db.php";
 $date = date('Y-m-d');
 $userpw = password_hash($_POST['pw'], PASSWORD_DEFAULT);
 if(isset($_POST['lockpost'])){

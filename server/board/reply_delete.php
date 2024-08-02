@@ -1,5 +1,5 @@
 <?php
-include "../../db.php";
+include "../db.php";
 $rno = $_POST['rno']; 
 $sql = query("select * from reply where idx='".$rno."'");//reply table idx is equal to rno
 $reply = $sql->fetch_array();

@@ -1,6 +1,6 @@
 <?php
-include "../../head.php";
-include "../../header.php";
+include "../head.php";
+include "../header.php";
 
 if (isset($_SESSION['userid'])) {
     echo "<script>alert('Incorrect approach.'); history.back();</script>";
@@ -44,5 +44,5 @@ if (isset($_SESSION['userid'])) {
     </div>
 <?php
 }
-include "../../footer.php";
+include "../footer.php";
 ?>

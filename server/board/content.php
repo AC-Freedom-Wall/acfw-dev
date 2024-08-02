@@ -1,7 +1,7 @@
 <?php
-include "head.php";
-include "db.php";
-include "header.php";
+include "server/head.php";
+include "server/db.php";
+include "server/header.php";
 ?>
 <div class="container">
     <div class="content">
@@ -20,7 +20,7 @@ include "header.php";
 		<!-- start seach box -->
 		<div id="search_box">
 		<h2>Search for a post here.</h2>
-		<form action="page/board/search_result_new.php" method="get">
+		<form action="server/board/search_result_new.php" method="get">
 		<select name="catgo">
 			<option value="title">Title</option>
 			<option value="name">Name</option>
@@ -34,7 +34,7 @@ include "header.php";
 		<!-- start write post -->
         <div id="write_area">
 			<h2>Write your post here.</h2>
-			<form action="page/board/post_write_ok.php" method="post" enctype="multipart/form-data">
+			<form action="server/board/post_write_ok.php" method="post" enctype="multipart/form-data">
 				<div id="in_title">
 					<textarea name="title" id="utitle" rows="1" cols="55" placeholder="Title" maxlength="100" required></textarea>
 				</div>
@@ -95,8 +95,8 @@ include "header.php";
 							<?php
 								if(isset($_SESSION['userid'])){
 							?>
-							<li><button class="moddelbutton" onclick="location.href='page/board/post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
-							<li><button class="moddelbutton" onclick="location.href='page/board/post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
+							<li><button class="moddelbutton" onclick="location.href='server/board/post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
+							<li><button class="moddelbutton" onclick="location.href='server/board/post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
 							<?php
 								}
 							?>
@@ -135,7 +135,7 @@ include "header.php";
 
 					<!-- comment edit form for dialog and it's hiding -->
 					<div class="dat_edit">
-						<form method="post" action="page/board/reply_modify_ok.php">
+						<form method="post" action="server/board/reply_modify_ok.php">
 							<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
 							<input type="password" name="pw" class="dap_sm" placeholder="Password" />
 							<textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
@@ -144,7 +144,7 @@ include "header.php";
 					</div>
 					<!-- comment delete and it's hiding -->
 					<div class='dat_delete'>
-						<form action="page/board/reply_delete.php" method="post">
+						<form action="server/board/reply_delete.php" method="post">
 							<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
 							<p>Password<input type="password" name="pw" /> <input type="submit" value="Conform"></p>
 							</form>
@@ -161,7 +161,7 @@ include "header.php";
 				?>
 				<!-- comment form -->
 				<div class="dap_ins">
-					<form action="page/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
+					<form action="server/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
 						<div style="margin-top:10px; ">
 							<textarea name="content" class="reply_content" id="re_content" ></textarea>
 							<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Pseudonym">
@@ -186,9 +186,9 @@ include "header.php";
 		<button id="loadMore">Load More</button>
 	</div> <!-- end of div class="content" -->
 	<?php
-		include "right-menu.php";
+		include "server/right-menu.php";
 	?>
 </div> <!-- end of div class="container" -->
 <?php
-	include "footer.php";
+	include "server/footer.php";
 ?>

@@ -1,8 +1,8 @@
 <!--- 게시글 수정 -->
 <?php
-include "../../head.php";
-include "../../header.php";
-include "../../db.php";
+include "../head.php";
+include "../header.php";
+include "../db.php";
 ?>
 
 <?php

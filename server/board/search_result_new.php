@@ -1,8 +1,34 @@
 <?php
-include "../../head.php";
-include "../../db.php";
-include "../../header.php";
+include "../db.php";
 ?>
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Algonquine College Freedom Wall">
+    <meta name="keywords" content="Algonquine, College, Freedom, Wall">
+    <meta name="author" content="ACFW dev group Co., Ltd. GhNM">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="theme-color" content="#ffffff">
+    <title>Algonquin College Freedom Wall</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/aboutus.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/contactus.css" />
+</head>
+<body>
+<header>
+    
+    <!--<h1>Algonquin College Freedom Wall</h1></h1>-->
+    <h1 id="mainpageheader"><a href="../../index.php">Algonquin College Freedom Wall</a></h1>
+
+</header>
 <div class="container">
     <div class="content">
 <?php
@@ -36,12 +62,9 @@ if ($result->num_rows > 0) {
 		</div>
 		<div id="user_info">
 			<?php echo "written by ".htmlspecialchars($board['name']); ?> <?php echo "on ".$board['date']; ?>  
-			
-			<!--Hit: --><?php //echo $board['hit']; ?>
-				<!--<div id="bo_line"></div>-->
+
 		</div>
 
-	<!-- 목록, 수정, 삭제 -->
 	<div class="bo_ser">
 		<ul>
 		<?php
@@ -57,7 +80,6 @@ if ($result->num_rows > 0) {
 	</div>
 </div>
 
-<!--- 댓글 불러오기 -->
 <div class="reply_view">
 	<h3>Comments</h3>
 		<?php
@@ -84,7 +106,6 @@ if ($result->num_rows > 0) {
 			</ul>
 			</div>
 
-			<!-- 댓글 수정 폼 dialog -->
 			<div class="dat_edit">
 				<form method="post" action="reply_modify_ok.php">
 					<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
@@ -93,7 +114,7 @@ if ($result->num_rows > 0) {
 					<input type="submit" value="Edit" class="re_mo_bt">
 				</form>
 			</div>
-			<!-- 댓글 삭제 비밀번호 확인 -->
+
 			<div class='dat_delete'>
 				<form action="reply_delete.php" method="post">
 					<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
@@ -103,7 +124,6 @@ if ($result->num_rows > 0) {
 		</div>
 	<?php } ?>
 
-	<!--- 댓글 입력 폼 -->
 	<?php
 				if(isset($_SESSION['userid'])){
 			?>
@@ -118,7 +138,7 @@ if ($result->num_rows > 0) {
 		</form>
 	</div>
 	<?php } ?>
-</div><!--- 댓글 불러오기 끝 -->
+</div>
 
 <?php
   }
@@ -142,6 +162,22 @@ if ($result->num_rows > 0) {
 </div>
 
 </div>
-<?php
-include "../../footer.php";
-?>
+<script type="text/javascript" src="../../scripts/jquery.min.js"></script>
+<script type="text/javascript" src="../../scripts/jquery-ui.js"></script>
+<script type="text/javascript" src="../../scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../scripts/common.js"></script>
+
+<footer>
+<nav class="footer-links">
+      <a href="../../index.php">Home</a>
+      <a href="../aboutus.php">About Us</a>
+      <a href="../contactus.php">Contact Us</a>
+</nav>
+<br>
+<span>Algonquin College Freedom Wall</span><br>
+    <span "footer-text"><em>"Speak out!"</em></span><br>
+    <span "footer-text">&copy; 2024</span>
+</footer>
+
+</body>
+</html>

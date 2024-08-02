@@ -1,3 +1,3 @@
 <?php
-    include "page/board/content.php";
+    include "server/board/content.php";
 ?>

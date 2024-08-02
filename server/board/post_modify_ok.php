@@ -1,5 +1,5 @@
 <?php
-include "../../db.php";
+include "../db.php";
 
 $bno = $_GET['idx'];
 $username = addslashes($_POST['name']);

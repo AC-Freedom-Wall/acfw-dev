@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 	$("#loadMore").click(function(){
 	  $.ajax({
-		url: '/page/board/load_more.php',
+		url: 'server/board/load_more.php',
 		type: 'post',
 		data: {offset: offset},
 		success: function(response){
