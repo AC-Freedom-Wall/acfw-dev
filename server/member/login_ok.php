@@ -1,5 +1,5 @@
 <?php	
-	include $_SERVER['DOCUMENT_ROOT']."/db.php";
+	include "../../db.php";
 
 	//password변수에 POST로 받아온 값을 저장하고 sql문으로 POST로 받아온 아이디값을 찾습니다.
 	$password = $_POST['userpw'];
@@ -11,7 +11,7 @@
 	{
 		$_SESSION['userid'] = $member["id"];
 		$_SESSION['userpw'] = $member["pw"];
-		echo "<script>location.href='/index.php';</script>";
+		echo "<script>location.href='../../index.php';</script>";
 
 		// If the last login is not today, update the points and login time
 		$sql = query("select last_login from levelpoint where id='".$_POST['userid']."'");

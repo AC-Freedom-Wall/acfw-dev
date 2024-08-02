@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/db.php";
+include "../../db.php";
 $date = date('Y-m-d');
 $userpw = password_hash($_POST['pw'], PASSWORD_DEFAULT);
 if(isset($_POST['lockpost'])){
@@ -12,7 +12,7 @@ if ($_FILES['b_file']['error'] === UPLOAD_ERR_OK) {
 	$tmpfile = $_FILES['b_file']['tmp_name'];
 	$o_name = $_FILES['b_file']['name'];
 	$filename = $_FILES['b_file']['name'];
-	$folder = $_SERVER['DOCUMENT_ROOT']."/upload/".$filename;
+	$folder = "../../upload/".$filename;
 	if (file_exists($tmpfile)) {
 		move_uploaded_file($tmpfile, $folder);
 		$sql2 = query("update levelpoint set point = point + 5 where userid='".$_SESSION['userid']."'");

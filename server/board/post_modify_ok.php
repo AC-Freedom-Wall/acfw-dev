@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/db.php";
+include "../../db.php";
 
 $bno = $_GET['idx'];
 $username = addslashes($_POST['name']);

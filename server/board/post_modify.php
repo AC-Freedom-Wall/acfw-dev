@@ -1,8 +1,8 @@
 <!--- 게시글 수정 -->
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/head.php";
-include $_SERVER['DOCUMENT_ROOT']."/header.php";
-include $_SERVER['DOCUMENT_ROOT']."/db.php";
+include "../../head.php";
+include "../../header.php";
+include "../../db.php";
 ?>
 
 <?php

@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/db.php";
+include "../../db.php";
 
 $userid = $_POST['userid'];
 $userpw = password_hash($_POST['userpw'], PASSWORD_DEFAULT);

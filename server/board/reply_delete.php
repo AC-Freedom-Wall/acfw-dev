@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/db.php";
+include "../../db.php";
 $rno = $_POST['rno']; 
 $sql = query("select * from reply where idx='".$rno."'");//reply table idx is equal to rno
 $reply = $sql->fetch_array();
@@ -14,7 +14,7 @@ $bpw = $reply['pw'];
 if(password_verify($pwk, $bpw)) 
 	{
 		$sql = query("delete from reply where idx='".$rno."'"); ?>
-	<script type="text/javascript">alert('Your comment has been deleted.'); history.back();</script>
+	<script type="text/javascript">alert('Your comment has been deleted. 😥'); history.back();</script>
 <?php 
 	}else{ 
 ?>

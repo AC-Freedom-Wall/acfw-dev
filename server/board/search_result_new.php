@@ -1,7 +1,7 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/head.php";
-include $_SERVER['DOCUMENT_ROOT']."/db.php";
-include $_SERVER['DOCUMENT_ROOT']."/header.php";
+include "../../head.php";
+include "../../db.php";
+include "../../header.php";
 ?>
 <div class="container">
     <div class="content">
@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
 				echo htmlspecialchars("$board[content]");
 				
 				if($board['file']){
-					echo "<br><img src='/upload/".$board['file']."' width='50%' height='50%'>";
+					echo "<br><img src='../../upload/".$board['file']."' width='50%' height='50%'>";
 				}
 			?> 
 		</div>
@@ -48,8 +48,8 @@ if ($result->num_rows > 0) {
 				if(isset($_SESSION['userid'])){
 			?>
 			<!-- <li><a href="/">[Back to list]</a></li> -->
-			<li><button class="moddelbutton" onclick="location.href='/page/board/post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
-			<li><button class="moddelbutton" onclick="location.href='/page/board/post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
+			<li><button class="moddelbutton" onclick="location.href='post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
+			<li><button class="moddelbutton" onclick="location.href='post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
 			<?php
 				}
 			?>
@@ -86,7 +86,7 @@ if ($result->num_rows > 0) {
 
 			<!-- 댓글 수정 폼 dialog -->
 			<div class="dat_edit">
-				<form method="post" action="/page/board/reply_modify_ok.php">
+				<form method="post" action="reply_modify_ok.php">
 					<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
 					<input type="password" name="pw" class="dap_sm" placeholder="Password" />
 					<textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
@@ -95,7 +95,7 @@ if ($result->num_rows > 0) {
 			</div>
 			<!-- 댓글 삭제 비밀번호 확인 -->
 			<div class='dat_delete'>
-				<form action="/page/board/reply_delete.php" method="post">
+				<form action="reply_delete.php" method="post">
 					<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
 			 		<p>Password<input type="password" name="pw" /> <input type="submit" value="Conform"></p>
 				 </form>
@@ -108,7 +108,7 @@ if ($result->num_rows > 0) {
 				if(isset($_SESSION['userid'])){
 			?>
 	<div class="dap_ins">
-		<form action="/page/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
+		<form action="reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
 			<div style="margin-top:10px; ">
 				<textarea name="content" class="reply_content" id="re_content" ></textarea>
 				<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Pseudonym">
@@ -128,7 +128,7 @@ if ($result->num_rows > 0) {
 ?>
 
 <div id="search_box2">
-      <form action="/page/board/search_result_new.php" method="get">
+      <form action="search_result_new.php" method="get">
       <select name="catgo">
         <option value="title">Title</option>
         <option value="name">Name</option>
@@ -141,13 +141,7 @@ if ($result->num_rows > 0) {
 </div>
 </div>
 
-<?php
-//include $_SERVER['DOCUMENT_ROOT']."/right-menu.php";
-?>
-
-
-
 </div>
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/footer.php";
+include "../../footer.php";
 ?>
