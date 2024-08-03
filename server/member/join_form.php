@@ -1,7 +1,30 @@
-<?php
-include "../head.php";
-include "../header.php";
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Algonquine College Freedom Wall">
+    <meta name="keywords" content="Algonquine, College, Freedom, Wall">
+    <meta name="author" content="ACFW dev group Co., Ltd. GhNM">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="theme-color" content="#ffffff">
+    <title>Algonquin College Freedom Wall</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/aboutus.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/contactus.css" />
+</head>
+<body>
+<header>
+    <h1 id="mainpageheader"><a href="../../index.php">Algonquin College Freedom Wall</a></h1>
+</header>
 
+<?php
 if (isset($_SESSION['userid'])) {
     echo "<script>alert('Incorrect approach.'); history.back();</script>";
 } else {
@@ -43,6 +66,24 @@ if (isset($_SESSION['userid'])) {
         </form>
     </div>
 <?php
-}
-include "../footer.php";
+    }
 ?>
+<script type="text/javascript" src="../../scripts/jquery.min.js"></script>
+<script type="text/javascript" src="../../scripts/jquery-ui.js"></script>
+<script type="text/javascript" src="../../scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../scripts/common.js"></script>
+
+<footer>
+<nav class="footer-links">
+      <a href="../../index.php">Home</a>
+      <a href="../aboutus.php">About Us</a>
+      <a href="../contactus.php">Contact Us</a>
+</nav>
+<br>
+<span>Algonquin College Freedom Wall</span><br>
+    <span "footer-text"><em>"Speak out!"</em></span><br>
+    <span "footer-text">&copy; 2024</span>
+</footer>
+
+</body>
+</html>
