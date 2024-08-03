@@ -1,6 +1,6 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/head.php";
-    include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/header.php";
+    include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/head.php";
+    include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/header.php";
 ?>
 
 <?php
@@ -48,5 +48,5 @@ if (isset($_SESSION['userid'])) {
     }
 ?>
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/footer.php";
+    include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/footer.php";
 ?>

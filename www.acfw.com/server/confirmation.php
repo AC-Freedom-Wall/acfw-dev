@@ -1,6 +1,6 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/head.php";
-    include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/header.php";
+    include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/head.php";
+    include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/header.php";
 ?>
 
 <div class="confirmationpage">
@@ -10,5 +10,5 @@
 </div>
 
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/footer.php";
+    include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/footer.php";
 ?>

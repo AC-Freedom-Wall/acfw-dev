@@ -1,5 +1,5 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/db.php";
+    include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";
 
     $rno = $_POST['rno'];//comment number
     $sql = query("select * from reply where idx='".$rno."'"); //reply table idx is equal to rno

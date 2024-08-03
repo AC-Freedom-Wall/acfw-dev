@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/db.php";
+include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";
 
     $bno = $_GET['idx'];
     $username = addslashes($_POST['name']);

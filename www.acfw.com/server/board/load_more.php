@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/db.php";
+include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";
 
 if (isset($_POST['offset'])) {
   $offset = intval($_POST['offset']);
@@ -16,7 +16,7 @@ if (isset($_POST['offset'])) {
 						echo htmlspecialchars("$board[content]");
 
 						if($board['file']){
-							echo "<br><img src='/dev.acfw.com/upload/".$board['file']."' width='50%' height='50%'>";
+							echo "<br><img src='/www.acfw.com/upload/".$board['file']."' width='50%' height='50%'>";
 						}
 					?> 
 				</div>
@@ -28,8 +28,8 @@ if (isset($_POST['offset'])) {
 						<?php
 							if(isset($_SESSION['userid'])){
 						?>
-						<li><button class="moddelbutton" onclick="location.href='/dev.acfw.com/server/board/post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
-						<li><button class="moddelbutton" onclick="location.href='/dev.acfw.com/server/board/post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
+						<li><button class="moddelbutton" onclick="location.href='/www.acfw.com/server/board/post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
+						<li><button class="moddelbutton" onclick="location.href='/www.acfw.com/server/board/post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
 						<?php
 							}
 						?>
@@ -62,7 +62,7 @@ if (isset($_POST['offset'])) {
 					</div>
 		
 					<div class="dat_edit">
-						<form method="post" action="/dev.acfw.com/server/board/reply_modify_ok.php">
+						<form method="post" action="/www.acfw.com/server/board/reply_modify_ok.php">
 							<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
 							<input type="password" name="pw" class="dap_sm" placeholder="Password" />
 							<textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
@@ -70,7 +70,7 @@ if (isset($_POST['offset'])) {
 						</form>
 					</div>
 					<div class='dat_delete'>
-						<form action="/dev.acfw.com/server/board/reply_delete.php" method="post">
+						<form action="/www.acfw.com/server/board/reply_delete.php" method="post">
 							<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
 							<p>Password<input type="password" name="pw" /> <input type="submit" value="Conform"></p>
 						</form>
@@ -82,7 +82,7 @@ if (isset($_POST['offset'])) {
 					if(isset($_SESSION['userid'])){
 				?>
 				<div class="dap_ins">
-					<form action="/dev.acfw.com/server/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
+					<form action="/www.acfw.com/server/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
 						<div style="margin-top:10px; ">
 							<textarea name="content" class="reply_content" id="re_content" ></textarea>
 							<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Pseudonym">

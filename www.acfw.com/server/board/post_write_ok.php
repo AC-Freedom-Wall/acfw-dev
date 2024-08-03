@@ -1,5 +1,5 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/db.php";
+	include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";
 
 	$date = date('Y-m-d');
 	$userpw = password_hash($_POST['pw'], PASSWORD_DEFAULT);
