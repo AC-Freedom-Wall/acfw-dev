@@ -1,14 +1,15 @@
 <?php
-include "server/head.php";
-include "server/db.php";
-include "server/header.php";
+include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/head.php";
+include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/db.php";
+include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/header.php";
 ?>
+
 <div class="container">
     <div class="content">
         <h2>Your Voice, Your Space! So speak up!</h2> <br>
         <h4>This is a safe haven for voice! Join the conversation today.</h4> <br>
 
-		<img class="photomain" src="img/studentspeakoutwatercolor.png" alt="students speakout image">
+		<img class="photomain" src="/dev.acfw.com/img/studentspeakoutwatercolor.png" alt="students speakout image">
 
         <?php
 			// start session to check if user is logged in
@@ -20,7 +21,7 @@ include "server/header.php";
 		<!-- start seach box -->
 		<div id="search_box">
 		<h2>Search for a post here.</h2>
-		<form action="server/board/search_result_new.php" method="get">
+		<form action="/dev.acfw.com/server/board/search_result_new.php" method="get">
 		<select name="catgo">
 			<option value="title">Title</option>
 			<option value="name">Name</option>
@@ -34,7 +35,7 @@ include "server/header.php";
 		<!-- start write post -->
         <div id="write_area">
 			<h2>Write your post here.</h2>
-			<form action="server/board/post_write_ok.php" method="post" enctype="multipart/form-data">
+			<form action="/dev.acfw.com/server/board/post_write_ok.php" method="post" enctype="multipart/form-data">
 				<div id="in_title">
 					<textarea name="title" id="utitle" rows="1" cols="55" placeholder="Title" maxlength="100" required></textarea>
 				</div>
@@ -83,7 +84,7 @@ include "server/header.php";
 							echo htmlspecialchars("$board[content]"); // content
 							
 							if($board['file']){
-								echo "<br><img src='upload/".$board['file']."' width='50%' height='50%'>"; // image
+								echo "<br><img src='/dev.acfw.com/upload/".$board['file']."' width='50%' height='50%'>"; // image
 							}
 						?> 
 					</div>
@@ -95,8 +96,8 @@ include "server/header.php";
 							<?php
 								if(isset($_SESSION['userid'])){
 							?>
-							<li><button class="moddelbutton" onclick="location.href='server/board/post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
-							<li><button class="moddelbutton" onclick="location.href='server/board/post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
+							<li><button class="moddelbutton" onclick="location.href='/dev.acfw.com/server/board/post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
+							<li><button class="moddelbutton" onclick="location.href='/dev.acfw.com/server/board/post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
 							<?php
 								}
 							?>
@@ -135,7 +136,7 @@ include "server/header.php";
 
 					<!-- comment edit form for dialog and it's hiding -->
 					<div class="dat_edit">
-						<form method="post" action="server/board/reply_modify_ok.php">
+						<form method="post" action="/dev.acfw.com/server/board/reply_modify_ok.php">
 							<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
 							<input type="password" name="pw" class="dap_sm" placeholder="Password" />
 							<textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
@@ -144,7 +145,7 @@ include "server/header.php";
 					</div>
 					<!-- comment delete and it's hiding -->
 					<div class='dat_delete'>
-						<form action="server/board/reply_delete.php" method="post">
+						<form action="/dev.acfw.com/server/board/reply_delete.php" method="post">
 							<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
 							<p>Password<input type="password" name="pw" /> <input type="submit" value="Conform"></p>
 							</form>
@@ -161,7 +162,7 @@ include "server/header.php";
 				?>
 				<!-- comment form -->
 				<div class="dap_ins">
-					<form action="server/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
+					<form action="/dev.acfw.com/server/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
 						<div style="margin-top:10px; ">
 							<textarea name="content" class="reply_content" id="re_content" ></textarea>
 							<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Pseudonym">
@@ -185,10 +186,10 @@ include "server/header.php";
 		<!-- Load More button -->
 		<button id="loadMore">Load More</button>
 	</div> <!-- end of div class="content" -->
-	<?php
-		include "server/right-menu.php";
-	?>
+<?php
+	include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/right-menu.php";
+?>
 </div> <!-- end of div class="container" -->
 <?php
-	include "server/footer.php";
+	include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/footer.php";
 ?>

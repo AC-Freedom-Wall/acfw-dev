@@ -1,34 +1,9 @@
 <?php
-include "../db.php";
+include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/head.php";
+include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/db.php";
+include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/header.php";
 ?>
-<!doctype html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Algonquine College Freedom Wall">
-    <meta name="keywords" content="Algonquine, College, Freedom, Wall">
-    <meta name="author" content="ACFW dev group Co., Ltd. GhNM">
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
-    <meta name="google" content="notranslate">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="format-detection" content="address=no">
-    <meta name="format-detection" content="email=no">
-    <meta name="theme-color" content="#ffffff">
-    <title>Algonquin College Freedom Wall</title>
-    <link rel="stylesheet" type="text/css" href="../../css/jquery-ui.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/aboutus.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/contactus.css" />
-</head>
-<body>
-<header>
-    
-    <!--<h1>Algonquin College Freedom Wall</h1></h1>-->
-    <h1 id="mainpageheader"><a href="../../index.php">Algonquin College Freedom Wall</a></h1>
 
-</header>
 <div class="container">
     <div class="content">
 <?php
@@ -56,7 +31,7 @@ if ($result->num_rows > 0) {
 				echo htmlspecialchars("$board[content]");
 				
 				if($board['file']){
-					echo "<br><img src='../../upload/".$board['file']."' width='50%' height='50%'>";
+					echo "<br><img src='/dev.acfw.com/upload/".$board['file']."' width='50%' height='50%'>";
 				}
 			?> 
 		</div>
@@ -71,8 +46,8 @@ if ($result->num_rows > 0) {
 				if(isset($_SESSION['userid'])){
 			?>
 			<!-- <li><a href="/">[Back to list]</a></li> -->
-			<li><button class="moddelbutton" onclick="location.href='post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
-			<li><button class="moddelbutton" onclick="location.href='post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
+			<li><button class="moddelbutton" onclick="location.href='/dev.acfw.com/server/post_modify.php?idx=<?php echo $board['idx']; ?>'">Modify</button></li>
+			<li><button class="moddelbutton" onclick="location.href='/dev.acfw.com/server/post_delete.php?idx=<?php echo $board['idx']; ?>'">Delete</button></li>
 			<?php
 				}
 			?>
@@ -107,7 +82,7 @@ if ($result->num_rows > 0) {
 			</div>
 
 			<div class="dat_edit">
-				<form method="post" action="reply_modify_ok.php">
+				<form method="post" action="/dev.acfw.com/server/reply_modify_ok.php">
 					<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
 					<input type="password" name="pw" class="dap_sm" placeholder="Password" />
 					<textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
@@ -116,7 +91,7 @@ if ($result->num_rows > 0) {
 			</div>
 
 			<div class='dat_delete'>
-				<form action="reply_delete.php" method="post">
+				<form action="/dev.acfw.com/server/reply_delete.php" method="post">
 					<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
 			 		<p>Password<input type="password" name="pw" /> <input type="submit" value="Conform"></p>
 				 </form>
@@ -128,7 +103,7 @@ if ($result->num_rows > 0) {
 				if(isset($_SESSION['userid'])){
 			?>
 	<div class="dap_ins">
-		<form action="reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
+		<form action="/dev.acfw.com/server/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
 			<div style="margin-top:10px; ">
 				<textarea name="content" class="reply_content" id="re_content" ></textarea>
 				<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Pseudonym">
@@ -148,7 +123,7 @@ if ($result->num_rows > 0) {
 ?>
 
 <div id="search_box2">
-      <form action="search_result_new.php" method="get">
+      <form action="/dev.acfw.com/server/search_result_new.php" method="get">
       <select name="catgo">
         <option value="title">Title</option>
         <option value="name">Name</option>
@@ -162,22 +137,6 @@ if ($result->num_rows > 0) {
 </div>
 
 </div>
-<script type="text/javascript" src="../../scripts/jquery.min.js"></script>
-<script type="text/javascript" src="../../scripts/jquery-ui.js"></script>
-<script type="text/javascript" src="../../scripts/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../../scripts/common.js"></script>
-
-<footer>
-<nav class="footer-links">
-      <a href="../../index.php">Home</a>
-      <a href="../aboutus.php">About Us</a>
-      <a href="../contactus.php">Contact Us</a>
-</nav>
-<br>
-<span>Algonquin College Freedom Wall</span><br>
-    <span "footer-text"><em>"Speak out!"</em></span><br>
-    <span "footer-text">&copy; 2024</span>
-</footer>
-
-</body>
-</html>
+<?php
+	include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/footer.php";
+?>

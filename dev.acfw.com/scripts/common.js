@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 	$("#loadMore").click(function(){
 	  $.ajax({
-		url: 'server/board/load_more.php',
+		url: '/dev.acfw.com/server/board/load_more.php',
 		type: 'post',
 		data: {offset: offset},
 		success: function(response){

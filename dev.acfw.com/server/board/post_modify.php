@@ -1,8 +1,8 @@
 <!--- 게시글 수정 -->
 <?php
-include "../head.php";
-include "../header.php";
-include "../db.php";
+include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/head.php";
+include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/db.php";
+include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/header.php";
 ?>
 
 <?php
@@ -13,7 +13,7 @@ include "../db.php";
     <div id="board_write">      
         <h3>Edit your post below.</h3>
             <div id="write_area">
-                <form action="post_modify_ok.php?idx=<?php echo $bno; ?>" method="post">
+                <form action="/dev.acfw.com/server/post_modify_ok.php?idx=<?php echo $bno; ?>" method="post">
                     <div id="in_title">
                         <textarea name="title" id="utitle" rows="1" cols="55" placeholder="Title" maxlength="100" required><?php echo $board['title']; ?></textarea>
                     </div>

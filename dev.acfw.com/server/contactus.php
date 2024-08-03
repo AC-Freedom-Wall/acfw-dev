@@ -1,6 +1,6 @@
-<?php 
-    include "head.php";
-    include "header.php";
+<?php
+    include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/head.php";
+    include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/header.php";
 ?>
 
 <div class="contactus">
@@ -26,6 +26,6 @@
     <div id="confirmation" class="confirmation"></div>
 </div>
 
-<?php 
-    include "footer.php";
+<?php
+    include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/footer.php";
 ?>

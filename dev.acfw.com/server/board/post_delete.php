@@ -1,5 +1,5 @@
 <?php
-	include "../db.php";
+include $_SERVER['DOCUMENT_ROOT']."/dev.acfw.com/server/db.php";
 	
 	$bno = $_GET['idx'];
 	$sql = query("delete from board where idx='$bno';");
