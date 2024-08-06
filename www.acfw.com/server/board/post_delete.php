@@ -5,4 +5,4 @@ include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";
 	$sql = query("delete from board where idx='$bno';");
 ?>
 <script type="text/javascript">alert("Your post has been deleted. 😭");</script>
-<meta http-equiv="refresh" content="0 url=/" />
+<meta http-equiv="refresh" content="0 url=/www.acfw.com/" />

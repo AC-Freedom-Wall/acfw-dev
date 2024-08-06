@@ -10,4 +10,4 @@ include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";
     $sql = query("update board set name='".$username."',pw='".$userpw."',title='".$title.")',content='".$content."' where idx='".$bno."'");
 ?>
 
-<meta http-equiv="refresh" content="0 url=/"/>
+<meta http-equiv="refresh" content="0 url=/www.acfw.com/"/>

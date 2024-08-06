@@ -1,8 +1,8 @@
 <div class="right-menu">
         <h2>Login</h2>
         <?php
-				if(isset($_SESSION['userid'])){ //세션 userid가 있으면 페이지를 보여줍니다
-					// lo_point변수에 sql쿼리결과를 저장
+				if(isset($_SESSION['userid'])){ //Show the page if the session userid exists
+					// Save the SQL query result in the lo_point variable
 					$sql = query("select * from levelpoint where userid='".$_SESSION['userid']."'");
 					$lo_point = $sql->fetch_array();
 			?>
@@ -16,7 +16,7 @@
 				echo "And every day you log in, you get 1 point! 🫡<br><br>";
 				echo "🤩 Share your story with us! 🥰";
 			?>
-			<?php }else{ ?><!--세션 userid체크해서 세션값 없으면 로그인 폼 표시 -->
+			<?php }else{ ?><!--Check session userid and show login form if no session value -->
 				<form class="login-form" action="/www.acfw.com/server/member/login_ok.php" method="post">
 					<ul>
 						<li><input type="text" name="userid" placeholder="Username" required /></li>

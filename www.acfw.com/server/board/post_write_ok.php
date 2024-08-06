@@ -28,4 +28,4 @@
 	$sql= query("insert into board(name,pw,title,content,date,lock_post,file) values('".addslashes($_POST['name'])."','".addslashes($userpw)."','".addslashes($_POST['title'])."','".addslashes($_POST['content'])."','".$date."','".$in_lock."','".$o_name."')");
 	$sql2 = query("update levelpoint set point = point + 5 where userid='".$_SESSION['userid']."'");
 	?>
-<meta http-equiv="refresh" content="0 url=/"/>
+<meta http-equiv="refresh" content="0 url=/www.acfw.com/"/>
