@@ -10,7 +10,7 @@
 
     header('Content-Type: text/html; charset=utf-8');
 
-    $db = new mysqli('localhost', 'acfwdb', 'acfwdb', 'bbs');
+    $db = new mysqli('localhost', 'acfwdb', 'acfwdb', 'acfwdb');
     $db->set_charset('utf8');
 
     function query($sql) {
