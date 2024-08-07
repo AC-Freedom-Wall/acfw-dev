@@ -79,7 +79,7 @@ if (isset($_POST['offset'])) {
 					<div class='dat_delete'>
 						<form action="/www.acfw.com/server/board/reply_delete.php" method="post">
 							<input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $board['idx']; ?>">
-							<p>Password<input type="password" name="pw" /> <input type="submit" value="Conform"></p>
+							<p>Password<input type="password" name="pw" /> <input type="submit" value="Confirm"></p>
 						</form>
 					</div>
 				</div>
