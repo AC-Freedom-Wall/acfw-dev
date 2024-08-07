@@ -16,7 +16,7 @@ include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/header.php";
         <h2>Your Voice, Your Space! So speak up!</h2> <br>
         <h4>This is a safe haven for voice! Join the conversation today.</h4> <br>
 
-		<img class="photomain" src="/www.acfw.com/img/studentspeakoutwatercolor.png" alt="students speakout image">
+		<img class="photomain" src="/www.acfw.com/img/studentspeakoutwatercolor.png" title="students speakout image" alt="students speakout image">
 
         <?php
 			// start session to check if user is logged in
@@ -34,7 +34,7 @@ include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/header.php";
 			<option value="name">Name</option>
 			<option value="content">Content</option>
 		</select>
-		<input type="text" name="search" size="40" required="required" /> <button>Search</button>
+		<input type="text" name="search" size="40" /> <button>Search</button>
 		</form>
 		</div>
 		<!-- end search box -->
