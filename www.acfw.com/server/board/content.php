@@ -1,3 +1,10 @@
+<!--
+	author: Andres Julian Rivera Ariza, haebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: content.php
+	description: This is the main page for the board. It displays the latest 5 posts and allows users to write a post, search for a post, and comment on a post.
+-->
+
 <?php
 include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/head.php";
 include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";

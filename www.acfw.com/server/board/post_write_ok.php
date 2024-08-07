@@ -1,3 +1,10 @@
+<!--
+	author: Andres Julian Rivera Ariza, haebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: post_write_ok.php
+	description: This file is used to write a post to the board.
+-->
+
 <?php
 	include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";
 

@@ -1,4 +1,10 @@
-<!--- 게시글 수정 -->
+<!--
+	author: Andres Julian Rivera Ariza, haebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: post_modify.php
+	description: This file is used to modify a post from the board.
+-->
+    
 <?php
 include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/head.php";
 include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";

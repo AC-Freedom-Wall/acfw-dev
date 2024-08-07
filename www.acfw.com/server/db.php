@@ -1,3 +1,10 @@
+<!--
+	author: Andres Julian Rivera Ariza, haebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: db.php
+	description: This file is used to connect to the database.
+-->
+
 <?php
     session_start();
 

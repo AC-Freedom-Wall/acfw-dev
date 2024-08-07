@@ -1,3 +1,10 @@
+<!--
+	author: Andres Julian Rivera Ariza, haebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: aboutus.php
+	description: This file is used to display information about the Algonquin College Freedom Wall.
+-->
+
 <?php
     include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/head.php";
     include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/header.php";

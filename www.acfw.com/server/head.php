@@ -1,3 +1,10 @@
+<!--
+	author: Andres Julian Rivera Ariza, haebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: head.php
+	description: This file is used to include the head of the website.
+-->
+    
 <!doctype html>
 <head>
     <meta charset="UTF-8">

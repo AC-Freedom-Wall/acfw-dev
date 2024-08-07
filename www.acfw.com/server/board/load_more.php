@@ -1,3 +1,10 @@
+<!--
+	author: Andres Julian Rivera Ariza, haebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: load_more.php
+	description: This file is used to load more posts from the board. It is called when the user scrolls to the bottom of the page.
+-->
+
 <?php
 
 include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";

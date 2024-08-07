@@ -1,6 +1,15 @@
-<?php	
-	include "../db.php";
+<!--
+	author: Andres Julian Rivera Ariza, haebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: login_ok.php
+	description: This file is used to log in to the website.
+-->
 
+<?php
+    include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";
+?>
+
+<?php
 	//store the value received as POST in the password variable and use the sql statement to find the username value received as POST.
 	$password = $_POST['userpw'];
 	$sql = query("select * from member where id='".$_POST['userid']."'");
@@ -11,7 +20,7 @@
 	{
 		$_SESSION['userid'] = $member["id"];
 		$_SESSION['userpw'] = $member["pw"];
-		echo "<script>location.href='../../index.php';</script>";
+		echo "<script>location.href='/www.acfw.com/index.php';</script>";
 
 		// If the last login is not today, update the points and login time
 		$sql = query("select last_login from levelpoint where id='".$_POST['userid']."'");

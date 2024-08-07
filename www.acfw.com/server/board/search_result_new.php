@@ -1,3 +1,10 @@
+<!--
+	author: Andres Julian Rivera Ariza, aebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: search_result_new.php
+	description: This file is used to display the search results from the board.
+-->
+
 <?php
 include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/head.php";
 include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";

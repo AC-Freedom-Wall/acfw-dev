@@ -1,3 +1,10 @@
+<!--
+	author: Andres Julian Rivera Ariza, haebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: right-menu.php
+	description: This file is used to display the right menu of the website.
+-->
+	
 <div class="right-menu">
         <h2>Login</h2>
         <?php

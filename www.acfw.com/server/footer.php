@@ -1,3 +1,10 @@
+<!--
+	author: Andres Julian Rivera Ariza, haebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: footer.php
+	description: This file is used to display the footer of the website.
+-->
+    
 <script type="text/javascript" src="/www.acfw.com/scripts/jquery.min.js"></script>
 <script type="text/javascript" src="/www.acfw.com/scripts/jquery-ui.js"></script>
 <script type="text/javascript" src="/www.acfw.com/scripts/jquery-ui.min.js"></script>

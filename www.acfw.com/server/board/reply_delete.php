@@ -1,3 +1,10 @@
+<!--
+	author: Andres Julian Rivera Ariza, haebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: reply_delete.php
+	description: This file is used to delete a comment from the board.
+-->
+
 <?php
 	include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";
 	

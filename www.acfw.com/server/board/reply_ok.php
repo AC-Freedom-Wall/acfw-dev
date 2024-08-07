@@ -1,3 +1,10 @@
+<!--
+	author: Andres Julian Rivera Ariza, aebin yoon, Johann Kenric See 
+	date: 2024-08-01
+	file name: reply_ok.php
+	description: This file is used to add a comment to the board.
+-->
+
 <?php
     include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";
 
