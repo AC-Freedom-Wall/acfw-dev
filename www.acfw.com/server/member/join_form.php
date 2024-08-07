@@ -12,7 +12,7 @@
 
 <?php
 if (isset($_SESSION['userid'])) {
-    echo "<script>alert('Incorrect approach.'); history.back();</script>";
+    echo "<script>alert('You are already an existing user.'); history.back();</script>";
 } else {
 ?>
     <div id="join_form_in">

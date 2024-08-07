@@ -16,7 +16,7 @@
     <h3><strong>Your Voice, Your Space</strong></p>
     <p>The Algonquin College Freedom Wall is a digital platform designed to foster open dialogue, creativity, and community among our students. Here, you have the freedom to express your thoughts, ideas, and feelings without fear of judgment or reprisal.</p>
     
-    <img src="/www.acfw.com/img/studentsspeakout.png" alt="students speakout image">
+    <img src="/www.acfw.com/img/studentsspeakout.png" title="students speakout image" alt="students speakout image" >
     
     <h3><strong>A Safe Haven for Expression</strong></p>
     <p>We believe that every student has a unique perspective to share. The Freedom Wall is a space where you can:</p>
@@ -27,7 +27,7 @@
     </ul>
     <p>We are committed to providing a safe and inclusive environment for all students. Please be respectful of others and adhere to our community guidelines.</p>
     <h3><strong>Let your voice be heard. Join the conversation today!</strong></p>
-    <img src="/www.acfw.com/img/speakout.jpg" alt="speech bubble">
+    <img src="/www.acfw.com/img/speakout.jpg" title="speech bubble image" alt="speech bubble">
 
 </div>
 <?php
