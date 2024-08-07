@@ -1,3 +1,10 @@
+/*
+	author: Andres Julian Rivera Ariza, haebin yoon, Johann Kenric See
+	date: 2024-08-01
+	file name: common.js
+	description: This file contains the common JavaScript functions used in the website.
+ */
+
 $(document).ready(function(){
 	// When the user clicks on the button, load more 5 posts
 	var offset = 5; // Initial offset for the next set of posts
