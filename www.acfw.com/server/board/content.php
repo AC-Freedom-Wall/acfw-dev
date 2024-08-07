@@ -117,7 +117,7 @@ include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/header.php";
 				<h3>Comments</h3>
 				<?php
 					// start query to get comments
-					$sql3 = query("select * from reply where con_num='".$board['idx']."' order by idx desc");
+					$sql3 = query("select * from reply where con_num='".$board['idx']."' order by idx asc");
 					while($reply = $sql3->fetch_array()){ 
 				?>
 				<div class="dap_to comt_edit"><?php echo htmlspecialchars("$reply[content]"); ?></div>

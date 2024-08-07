@@ -24,22 +24,25 @@ $(document).ready(function(){
 	});
 
 	// When the user clicks on the button, comment on the post
-	$("#rep_bt").click(function(){
-		$.post("reply_ok.php",{
-			bno:$(".bno").val(),
-			dat_user:$(".dat_user").val(),
-			dat_pw:$(".dat_pw").val(),
-			content:$(".reply_content").val(),
-		},	
-		function(data,success){
-			if(success=="success"){
-				$(".reply_view").html(data);
-				// alert("A comment has been made");	
-			}else{
-				alert("Comment failed");
-			}
-		});
-	});
+    // $("#rep_bt").click(function(){
+    //     $.post("/www.acfw.com/server/board/reply_ok.php",{
+    //         bno:$("#bno").val(),
+    //         dat_user:$("#dat_user").val(),
+    //         dat_pw:$("#dat_pw").val(),
+    //         content:$("#re_content").val()
+    //     },
+    //     function(data,success){
+    //         alert(success);
+    //         if(success === "success"){
+    //             $(".reply_view").html(data);
+    //             // document.getElementById("form_comment").reset();
+    //             // history.go(0);
+    //             // alert("A comment has been made");
+    //         }else{
+    //             // alert("Comment failed");
+    //         }
+    //     });
+    // });
 
 	// When the user clicks on the button, edit the comment
 	$(".dat_edit_bt").click(function(){

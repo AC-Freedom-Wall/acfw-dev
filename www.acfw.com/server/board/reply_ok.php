@@ -9,6 +9,7 @@
     include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/db.php";
 
     $bno = $_GET['idx'];
+    // $bno = $_POST['bno'];
     $userpw = password_hash($_POST['dat_pw'], PASSWORD_DEFAULT);
     
     if($bno && $_POST['dat_user'] && $userpw && $_POST['content']){
@@ -17,7 +18,7 @@
     }
     else
     {
-        echo "<script>alert('Comment failed.');</script>";
+        // echo "<script>alert('Comment failed.');</script>";
     }
     echo "<script>history.back();</script>";
 ?>

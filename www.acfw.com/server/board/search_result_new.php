@@ -65,7 +65,7 @@ if ($result->num_rows > 0) {
 <div class="reply_view">
 	<h3>Comments</h3>
 		<?php
-			$sql3 = query("select * from reply where con_num='".$board['idx']."' order by idx desc");
+			$sql3 = query("select * from reply where con_num='".$board['idx']."' order by idx asc");
 			while($reply = $sql3->fetch_array()){ 
 		?>
 		<div class="dap_to comt_edit"><?php echo htmlspecialchars("$reply[content]"); ?></div>
