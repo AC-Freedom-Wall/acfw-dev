@@ -18,7 +18,7 @@
 				<?php
 				echo "You got ",$lo_point['point']," Points 😀<br><br>";
 				echo "Write a post and get 5 points 😮<br>";
-				echo "With uploading a picture, you get 5 points more! 😱<br>";
+				echo "By uploading a picture, you get 5 more points! 😱<br>";
 				echo "Comment and get 1 point 😘<br>";
 				echo "And every day you log in, you get 1 point! 🫡<br><br>";
 				echo "🤩 Share your story with us! 🥰";
