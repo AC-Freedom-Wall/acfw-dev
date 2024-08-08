@@ -284,3 +284,94 @@ function highlightField(fieldId) {
 function removeHighlight(fieldId) {
     document.getElementById(fieldId).style.border = '';
 }
+
+function validateSearch() {
+    var searchInput = document.querySelector('input[name="search"]').value.trim();
+    if (searchInput === "") {
+        alert("Please enter a search term.");
+        return false; // Prevent form submission
+    }
+    return true; // Allow form submission
+}
+
+// common.js
+
+function validateWritePost() {
+    // Clear previous error messages
+    document.getElementById('titleError').textContent = "";
+    document.getElementById('nameError').textContent = "";
+    document.getElementById('contentError').textContent = "";
+    document.getElementById('passwordError').textContent = "";
+
+    // Get the values of the form fields
+    var title = document.getElementById('utitle').value.trim();
+    var name = document.getElementById('uname').value.trim();
+    var content = document.getElementById('ucontent').value.trim();
+    var password = document.getElementById('upw').value.trim();
+
+    var isValid = true;
+
+    // Check if the title is empty
+    if (title === "") {
+        document.getElementById('titleError').textContent = "Please enter a title.";
+        isValid = false;
+    }
+
+    // Check if the name is empty
+    if (name === "") {
+        document.getElementById('nameError').textContent = "Please enter your pseudonym.";
+        isValid = false;
+    }
+
+    // Check if the content is empty
+    if (content === "") {
+        document.getElementById('contentError').textContent = "Please enter the content.";
+        isValid = false;
+    }
+
+    // Check if the password is empty
+    if (password === "") {
+        document.getElementById('passwordError').textContent = "Please enter a password.";
+        isValid = false;
+    }
+
+    // If all checks pass, allow form submission
+    return isValid;
+}
+
+// common.js
+
+function validateWriteComment() {
+    // Clear previous error messages
+    document.getElementById('comment_contentError').textContent = "";
+    document.getElementById('comment_userError').textContent = "";
+    document.getElementById('comment_passwordError').textContent = "";
+
+    // Get the values of the form fields
+    var content = document.getElementById('re_content').value.trim();
+    var user = document.getElementById('dat_user').value.trim();
+    var password = document.getElementById('dat_pw').value.trim();
+
+    var isValid = true;
+
+    // Check if the content is empty
+    if (content === "") {
+        document.getElementById('comment_contentError').textContent = "Please enter your comment.";
+        isValid = false;
+    }
+
+    // Check if the user pseudonym is empty
+    if (user === "") {
+        document.getElementById('comment_userError').textContent = "Please enter your pseudonym.";
+        isValid = false;
+    }
+
+    // Check if the password is empty
+    if (password === "") {
+        document.getElementById('comment_passwordError').textContent = "Please enter a password.";
+        isValid = false;
+    }
+
+    // If all checks pass, allow form submission
+    return isValid;
+}

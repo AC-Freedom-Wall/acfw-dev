@@ -28,13 +28,14 @@ include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/header.php";
 		<!-- start seach box -->
 		<div id="search_box">
 		<h2>Search for a post here.</h2>
-		<form action="/www.acfw.com/server/board/search_result_new.php" method="get">
-		<select name="catgo">
-			<option value="title">Title</option>
-			<option value="name">Name</option>
-			<option value="content">Content</option>
-		</select>
-		<input type="text" name="search" size="40" /> <button>Search</button>
+		<form action="/www.acfw.com/server/board/search_result_new.php" method="get" onsubmit="return validateSearch()">
+			<select name="catgo">
+				<option value="title">Title</option>
+				<option value="name">Name</option>
+				<option value="content">Content</option>
+			</select>
+			<input type="text" name="search" size="40" />
+			<button>Search</button>
 		</form>
 		</div>
 		<!-- end search box -->
@@ -42,20 +43,24 @@ include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/header.php";
 		<!-- start write post -->
         <div id="write_area">
 			<h2>Write your post here.</h2>
-			<form action="/www.acfw.com/server/board/post_write_ok.php" method="post" enctype="multipart/form-data">
-				<div id="in_title">
-					<textarea name="title" id="utitle" rows="1" cols="55" placeholder="Title" maxlength="100" required></textarea>
-				</div>
+			<form action="/www.acfw.com/server/board/post_write_ok.php" method="post" enctype="multipart/form-data" onsubmit="return validateWritePost()">
+    		    <div id="in_title">
+					<textarea name="title" id="utitle" rows="1" cols="55" placeholder="Title" maxlength="100" ></textarea>
+            		<span class="error" id="titleError"></span>
+        		</div>
 				<div class="wi_line"></div>
 				<div id="in_name">
-					<textarea name="name" id="uname" rows="1" cols="55" placeholder="Pseudonym" maxlength="100" required></textarea>
+					<textarea name="name" id="uname" rows="1" cols="55" placeholder="Pseudonym" maxlength="100" ></textarea>
+					<span class="error" id="nameError"></span>
 				</div>
 				<div class="wi_line"></div>
 				<div id="in_content">
-					<textarea name="content" id="ucontent" placeholder="Content" required></textarea>
+					<textarea name="content" id="ucontent" placeholder="Content" ></textarea>
+					<span class="error" id="contentError"></span>
 				</div>
 				<div id="in_pw">
-					<input type="password" name="pw" id="upw"  placeholder="Password" required />  
+					<input type="password" name="pw" id="upw" placeholder="Password"  />
+					<span class="error" id="passwordError"></span>
 				</div>
 				<div id="in_lock">
 					<input type="checkbox" value="1" name="lockpost" />Lock the post.
@@ -169,13 +174,16 @@ include $_SERVER['DOCUMENT_ROOT']."/www.acfw.com/server/header.php";
 				?>
 				<!-- comment form -->
 				<div class="dap_ins">
-					<form action="/www.acfw.com/server/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post">
-						<div style="margin-top:10px; ">
-							<textarea name="content" class="reply_content" id="re_content" ></textarea>
-							<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Pseudonym">
-							<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="Password">
-							<button id="rep_bt" class="re_bt">comment</button>
-						</div>
+					<form action="/www.acfw.com/server/board/reply_ok.php?idx=<?php echo $board['idx']; ?>" method="post" onsubmit="return validateWriteComment()">
+					<div style="margin-top:10px;">
+						<textarea name="content" class="reply_content" id="re_content" required></textarea>
+						<span class="error" id="comment_contentError"></span>
+						<input type="text" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="Pseudonym" required>
+						<span class="error" id="comment_userError"></span>
+						<input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="Password" required>
+						<span class="error" id="comment_passwordError"></span>
+						<button id="rep_bt" class="re_bt">comment</button>
+					</div>
 					</form>
 				</div>
 				<?php
